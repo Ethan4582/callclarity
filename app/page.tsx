@@ -1,42 +1,31 @@
 import Hero from "@/src/components/Landing_pages/Hero";
 import Navbar from "@/src/components/Landing_pages/Navbar";
-import Image from "next/image";
+import Feature from "@/src/components/Landing_pages/Feature";
+import Benefits from "@/src/components/Landing_pages/Benefits";
+import Benefits2 from "@/src/components/Landing_pages/Benefits2";
+import Testimonial from "@/src/components/Landing_pages/testimonial";
+import Footer from "@/src/components/Landing_pages/Footer";
+import Pricing from "@/src/components/Landing_pages/Pricing";
+import Faq from "@/src/components/Landing_pages/Faq";
 
 export default function Home() {
   return (
-    <div>
-          <div className="text-black text-[16px] leading-[normal]" style={{"fontFamily":"\"Times New Roman\"","width":"1440px","transform":"scale(1)","margin":"auto"}}>
-  <div className="bg-black text-[12px]" style={{"fontFamily":"sans-serif"}}>
-    <div>
-      <div className="items-center flex flex-col h-min justify-start overflow-clip relative bg-black gap-[0px] min-h-[900px]">
-{/* 
-      <Navbar /> */}
-        
-       <Hero />
-
-        <div></div>
-        
-       
-
+    <div className="bg-black min-h-screen text-white font-sans overflow-x-hidden">
+      <div className="max-w-[1440px] mx-auto relative flex flex-col">
+        <Navbar />
+        <Hero />
       </div>
-      <div></div>
-    </div>
 
+      <main className="flex flex-col gap-0 w-full">
+        <Feature />
+        <Benefits />
+        <Benefits2 />
+        <Testimonial />
+        <Pricing />
+        <Faq />
+      </main>
 
-
-
-{/* part 2 */}
-
-  
-
-    
-  </div>
-</div>
-      
+      <Footer />
     </div>
   );
 }
-
-import React from 'react';
-
-

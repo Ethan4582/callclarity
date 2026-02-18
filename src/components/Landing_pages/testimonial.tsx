@@ -1,6 +1,6 @@
 import React from 'react'
 
-const testimonial = () => {
+const Testimonial = () => {
   return (
     <div>
        <section aria-label="Testimonials" className="items-center flex flex-col h-min justify-center relative w-full bg-[rgba(19,_19,_20,_0.44)]/44 gap-[44px] pt-[100px] pr-0 pb-11 pl-0 shrink-[0] rounded-[5rem]">
@@ -2486,4 +2486,4 @@ const testimonial = () => {
   )
 }
 
-export default testimonial
+export default  Testimonial
