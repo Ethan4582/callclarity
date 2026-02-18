@@ -109,6 +109,31 @@ html {
   .btn-signin {
     @apply items-center flex size-min justify-center overflow-hidden relative bg-[#171717] text-[var(--primary-blue)] gap-2 py-3 px-5 rounded-2xl after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[#222222] after:content-[''] after:rounded-2xl no-underline;
   }
+
+  .gradient-badge-bg {
+    background-image: linear-gradient(233.105deg, rgb(5, 5, 5) 45.548%, rgb(0, 36, 65) 64.2609%, rgb(4, 12, 121) 74.7455%, rgb(68, 13, 139) 84.2771%, rgb(26, 23, 37) 100%);
+  }
+
+  .text-shadow-white {
+    text-decoration: rgb(255, 255, 255);
+  }
+
+  .text-shadow-gray {
+    text-decoration: rgb(146, 146, 146);
+  }
+
+  .hero-primary-btn-bg {
+    background-image: linear-gradient(rgb(79, 43, 255) 0%, rgb(78, 33, 255) 17.436%, rgb(51, 0, 255) 46.6938%, rgb(42, 0, 212) 83.7363%, rgb(42, 0, 212) 99.6235%);
+  }
+
+  .hero-secondary-btn-bg {
+    background-image: linear-gradient(rgb(23, 23, 23) 0%, rgb(23, 23, 23) 25%, rgb(23, 23, 23) 50%, rgb(23, 23, 23) 75%, rgb(23, 23, 23) 100%);
+  }
+
+  .hero-globe-shadow {
+    box-shadow: inset 1.96px -1.22px 16px 0px rgb(0, 234, 255), inset -1.72px 1.48px 16px 0px rgb(38, 0, 255), inset -9.09px 0.98px 161px 0px rgba(255, 255, 255, 0.88), inset 8.59px -0.74px 11px 0px rgb(255, 255, 255), -0.47px 0.91px 0.91px 0px rgba(11, 0, 77, 0.19), -0.94px 2.15px 2.15px 0px rgba(11, 0, 77, 0.18), -1.41px 3.92px 3.92px 0px rgba(11, 0, 77, 0.18), -1.88px 6.52px 6.52px 0px rgba(11, 0, 77, 0.17), -2.34px 10.53px 10.53px 0px rgba(11, 0, 77, 0.16), -2.81px 17.23px 17.23px 0px rgba(11, 0, 77, 0.15), -3.28px 29.67px 29.67px 0px rgba(11, 0, 77, 0.12), -3.75px 54px 54px 0px rgba(11, 0, 77, 0.06), 0px 3.94px 32px 0px rgba(0, 0, 0, 0.25), 0px 7.85px 64px 0px rgba(0, 0, 0, 0.25), 0px 7.11px 182px 0px rgb(30, 0, 179);
+  }
+
 }
 
 /* Font Faces */
