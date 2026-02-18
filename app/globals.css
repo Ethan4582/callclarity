@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-blue: rgb(0, 0, 238);
 }
 
 @theme inline {
@@ -10,6 +11,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-inter: "Inter", sans-serif;
+  --font-geist: "Geist", "Geist Placeholder", sans-serif;
+  --font-poppins: "Poppins", "Poppins Placeholder", sans-serif;
+  --font-joan: "Joan", "Joan Placeholder", serif;
+  --font-intel: "Intel One Mono", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,94 +35,151 @@ html {
   scroll-behavior: auto;
 }
 
+/* Marquee Animation */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
 
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  will-change: transform;
+  animation: marquee 20s linear infinite;
+}
 
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+
+@media (min-width: 768px) {
+  .marquee-track {
+    gap: 75px;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer components {
+  .nav-container {
+    @apply items-center flex h-min justify-center relative w-full backdrop-blur-[5px] bg-black/80 gap-[10px] py-5 px-11;
+  }
+
+  .nav-content {
+    @apply items-center flex grow h-min justify-between relative w-px basis-0 max-w-[1400px] shrink-0;
+  }
+
+  .nav-link-container {
+    @apply relative shrink-0;
+  }
+
+  .nav-link {
+    @apply items-center flex size-min justify-start overflow-hidden relative text-[var(--primary-blue)] gap-[10px] opacity-80 no-underline hover:opacity-100 transition-opacity;
+  }
+
+  .nav-link-text {
+    @apply text-white text-base tracking-[-0.64px] leading-tight font-inter decoration-white;
+  }
+
+  .btn-primary {
+    @apply items-center flex size-min justify-center overflow-hidden relative bg-[#171717] text-[var(--primary-blue)] gap-2 py-3 px-5 rounded-2xl no-underline;
+    background-image: linear-gradient(#171717 0%, #171717 25%, #171717 50%, #171717 75%, #171717 100%);
+  }
+
+  .logo-container {
+    @apply items-center flex size-min justify-center overflow-hidden relative bg-[#5e5e5e]/15 text-[var(--primary-blue)] gap-[7px] p-[7px] pr-[14px] rounded-[1.7rem] no-underline;
+  }
+
+  .globe-icon {
+    @apply aspect-square overflow-hidden relative w-[27px] z-[5] shrink-0 rounded-[0.86rem];
+    box-shadow: inset 1.96px -1.22px 16px 0px rgb(0, 234, 255), inset -1.72px 1.48px 16px 0px rgb(38, 0, 255), inset -9.09px 0.98px 161px 0px rgba(255, 255, 255, 0.88), inset 8.59px -0.74px 11px 0px rgb(255, 255, 255), -0.47px 0.91px 0.91px 0px rgba(11, 0, 77, 0.19), -0.94px 2.15px 2.15px 0px rgba(11, 0, 77, 0.18), -1.41px 3.92px 3.92px 0px rgba(11, 0, 77, 0.18), -1.88px 6.52px 6.52px 0px rgba(11, 0, 77, 0.17), -2.34px 10.53px 10.53px 0px rgba(11, 0, 77, 0.16), -2.81px 17.23px 17.23px 0px rgba(11, 0, 77, 0.15), -3.28px 29.67px 29.67px 0px rgba(11, 0, 77, 0.12), -3.75px 54px 54px 0px rgba(11, 0, 77, 0.06), 0px 3.94px 32px 0px rgba(0, 0, 0, 0.25), 0px 7.85px 64px 0px rgba(0, 0, 0, 0.25), 0px 7.11px 182px 0px rgb(30, 0, 179);
+    background-image: linear-gradient(rgb(107, 134, 255) 0%, rgb(0, 123, 255) 48.48%, rgb(0, 47, 255) 100%);
+  }
+
+  .btn-signin {
+    @apply items-center flex size-min justify-center overflow-hidden relative bg-[#171717] text-[var(--primary-blue)] gap-2 py-3 px-5 rounded-2xl after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[#222222] after:content-[''] after:rounded-2xl no-underline;
+  }
+}
+
+/* Font Faces */
 @font-face {
-font-display: swap;
-font-family: 'Geist';
-font-style: normal;
-font-weight: 400;
-font-stretch: normal;
-unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2Fa59aabd24d95f76b7e97143fa20c6a4c83a00c63?generation=1770755084064034&alt=media') format('woff2');
+  font-display: swap;
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2Fa59aabd24d95f76b7e97143fa20c6a4c83a00c63?generation=1770755084064034&alt=media') format('woff2');
 }
 
 @font-face {
-font-display: swap;
-font-family: 'Geist';
-font-style: normal;
-font-weight: 500;
-font-stretch: normal;
-unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2Fa59aabd24d95f76b7e97143fa20c6a4c83a00c63?generation=1770755084064034&alt=media') format('woff2');
+  font-display: swap;
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2Fa59aabd24d95f76b7e97143fa20c6a4c83a00c63?generation=1770755084064034&alt=media') format('woff2');
 }
 
 @font-face {
-font-display: swap;
-font-family: 'DM Sans';
-font-style: normal;
-font-weight: 500;
-font-stretch: normal;
-unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F4a162522c119ff3359ccdd5339e6a4eac9b30d28?generation=1765846072569370&alt=media') format('woff2');
+  font-display: swap;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F4a162522c119ff3359ccdd5339e6a4eac9b30d28?generation=1765846072569370&alt=media') format('woff2');
 }
 
 @font-face {
-font-display: swap;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-stretch: normal;
-unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F1ab81cfcac2b37a777533f04c1c2c7671c047c2e?generation=1770313661648338&alt=media') format('woff2');
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F1ab81cfcac2b37a777533f04c1c2c7671c047c2e?generation=1770313661648338&alt=media') format('woff2');
 }
 
 @font-face {
-font-display: auto;
-font-family: 'Intel One Mono';
-font-style: normal;
-font-weight: 500;
-font-stretch: normal;
-unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F0319b063977a5d58e05364707688d26bc21eba8c?generation=1771443077832361&alt=media') format('woff2');
+  font-display: auto;
+  font-family: 'Intel One Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F0319b063977a5d58e05364707688d26bc21eba8c?generation=1771443077832361&alt=media') format('woff2');
 }
 
 @font-face {
-font-display: swap;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-stretch: normal;
-unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F5239458429d48f184d7dea78a1804faa712cb32a?generation=1770203247092071&alt=media') format('woff2');
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F5239458429d48f184d7dea78a1804faa712cb32a?generation=1770203247092071&alt=media') format('woff2');
 }
 
 @font-face {
-font-display: swap;
-font-family: 'Joan';
-font-style: normal;
-font-weight: 400;
-font-stretch: normal;
-unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F3aadfbe24fd7ca8a2ddee568732d6c47458fabb1?generation=1771443077836693&alt=media') format('woff2');
+  font-display: swap;
+  font-family: 'Joan';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F3aadfbe24fd7ca8a2ddee568732d6c47458fabb1?generation=1771443077836693&alt=media') format('woff2');
 }
 
 @font-face {
-font-display: swap;
-font-family: 'Poppins';
-font-style: italic;
-font-weight: 500;
-font-stretch: normal;
-unicode-range: U+0-10FFFF;
-src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F1e47766645876275be18b6df695eb43e22c7bd38?generation=1769689428882031&alt=media') format('woff2');
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 500;
+  src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F1e47766645876275be18b6df695eb43e22c7bd38?generation=1769689428882031&alt=media') format('woff2');
 }
 
 @font-face {
-font-display: auto;
-font-family: 'Lily Script One';
-font-style: normal;
-font-weight: 400;
-font-stretch: normal;
-unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F46c3c57a9ea339acee13db243296a63b0327ae43?generation=1771443077847519&alt=media') format('woff2');
+  font-display: auto;
+  font-family: 'Lily Script One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F46c3c57a9ea339acee13db243296a63b0327ae43?generation=1771443077847519&alt=media') format('woff2');
 }

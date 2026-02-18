@@ -17,11 +17,19 @@ export default function Home() {
       </div>
 
       <main className="flex flex-col gap-0 w-full">
-        <Feature />
-        <Benefits />
+        <section id="features">
+          <Feature />
+        </section>
+        <section id="benefits-1">
+          <Benefits />
+        </section>
         <Benefits2 />
-        <Testimonial />
-        <Pricing />
+        <section id="testimonials">
+          <Testimonial />
+        </section>
+        <section id="pricing">
+          <Pricing />
+        </section>
         <Faq />
       </main>
 
