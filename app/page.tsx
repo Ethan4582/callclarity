@@ -1,5 +1,5 @@
-import Hero from "@/src/components/Hero";
-import Navbar from "@/src/components/Navbar";
+import Hero from "@/src/components/Landing_pages/Hero";
+import Navbar from "@/src/components/Landing_pages/Navbar";
 import Image from "next/image";
 
 export default function Home() {
