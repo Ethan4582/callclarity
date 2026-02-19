@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -333,6 +335,50 @@ html {
     @apply after:border after:size-full after:pointer-events-none after:absolute after:text-center after:left-0 after:top-0 after:border-[rgb(34_34_34)] after:content-[''] after:rounded-[0.9775rem];
   }
 
+  /* ── New Pricing Styles from HTML ───────────────────────────────────── */
+  .orb-gradient {
+    background: radial-gradient(circle at 30% 30%, #60a5fa, #3b82f6, #7c3aed);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+
+  .pro-glow-bottom {
+    background: radial-gradient(circle at bottom, rgba(59, 70, 246, 0.3) 0%, rgba(59, 70, 246, 0.05) 50%, transparent 70%);
+  }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, #2e35e6 0%, #2563eb 50%, #4f46e5 100%);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+  }
+
+  .bg-subtle-gradient {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  /* Custom colors mapped to classes */
+  .bg-card-bg {
+    background-color: #080808;
+  }
+
+  .bg-badge-bg {
+    background-color: #121212;
+  }
+
+  .bg-primary-btn {
+    background-color: #3b28cc;
+  }
+
+  .text-text-secondary {
+    color: #9ca3af;
+  }
+
+  .border-card-border {
+    border-color: #1a1a1a;
+  }
+
+  .shadow-glow-pro {
+    box-shadow: 0 0 50px -10px rgba(59, 130, 246, 0.4);
+  }
+
 }
 
 /* Font Faces */
@@ -422,4 +468,59 @@ html {
 
 .animate-marquee-infinite {
   animation: marquee 35s linear infinite;
+}
+
+
+
+
+/* ===== Custom styles for PricingPlans component ===== */
+
+/* Tailwind directives (if you use Tailwind CLI – remove if you already have them) */
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+/* Global body style (matching original) */
+body {
+  background-color: #000000;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom class for the glowing orb */
+.orb-gradient {
+  background: radial-gradient(circle at 30% 30%, #60a5fa, #3b82f6, #7c3aed);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Bottom glow for Pro card */
+.pro-glow-bottom {
+  background: radial-gradient(circle at bottom, rgba(59, 70, 246, 0.3) 0%, rgba(59, 70, 246, 0.05) 50%, transparent 70%);
+}
+
+/* Gradient button for Pro plan */
+.btn-gradient {
+  background: linear-gradient(90deg, #2e35e6 0%, #2563eb 50%, #4f46e5 100%);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Subtle background gradient used on Pro card */
+.bg-subtle-gradient {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Optional scrollbar styling (from original) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
 }

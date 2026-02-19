@@ -224,3 +224,80 @@ export const BENEFITS_DATA = [
          'Provides sentiment and performance insights to help improve agent coaching and resolution quality.',
    },
 ];
+
+// ─── Pricing Section Data ─────────────────────────────────────────────────────
+
+export const PRICING_ORB_IMG =
+   "https://framerusercontent.com/images/5Pub0lPIrIZpK4nX3COGe2UuttQ.png?width=360&height=312";
+
+export const PRICING_BADGE_TEXT = "Our Pricing";
+export const PRICING_HEADING = "Choose the right plan\nfor your goals";
+export const PRICING_SUBTITLE =
+   "Pick the plan that fits your needs today\nand scales with your team.";
+
+export const PRICING_CTA_QUESTION = "You have a question?";
+export const PRICING_CTA_BUTTON_TEXT = "Send an Email";
+// Using a generic href for now as per the HTML
+export const PRICING_CTA_BUTTON_HREF = "#";
+
+export interface PricingPlan {
+   name: string;
+   monthlyPrice: string;
+   yearlyPrice: string;
+   subscriptionLabel: string;
+   features: string[];
+   bottomText: string;
+   buttonText: string;
+   isPro: boolean;
+}
+
+export const PRICING_PLANS: PricingPlan[] = [
+   {
+      name: "Basic Plan",
+      monthlyPrice: "$10",
+      yearlyPrice: "$96",
+      subscriptionLabel: "Monthly Subscription",
+      features: [
+         "Limited Access",
+         "Basic Context Memory",
+         "Fast AI Responses",
+         "Standard Updates",
+         "Email Support",
+      ],
+      bottomText: "You can easily cancel anytime.",
+      buttonText: "Choose Plan",
+      isPro: false,
+   },
+   {
+      name: "Pro Plan",
+      monthlyPrice: "$19",
+      yearlyPrice: "$180",
+      subscriptionLabel: "Monthly Subscription",
+      features: [
+         "Unlimited Access",
+         "Enhanced Context Memory",
+         "Personalized AI Responses",
+         "Tool & App Integrations",
+         "Priority Support Access",
+      ],
+      bottomText: "You can easily cancel anytime.",
+      buttonText: "Choose Plan",
+      isPro: true,
+   },
+   {
+      name: "Team Plan",
+      monthlyPrice: "$49",
+      yearlyPrice: "$468",
+      subscriptionLabel: "Monthly Subscription",
+      features: [
+         "Everything in Pro",
+         "Multi-user Access",
+         "Shared Workspace",
+         "Admin Dashboard & Controls",
+         "API Access & Integrations",
+      ],
+      bottomText: "You can easily cancel anytime.",
+      buttonText: "Choose Plan",
+      isPro: false,
+   },
+];
