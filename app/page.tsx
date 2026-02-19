@@ -7,6 +7,7 @@ import Testimonial from "@/src/components/Landing_pages/testimonial";
 import Footer from "@/src/components/Landing_pages/Footer";
 import Pricing from "@/src/components/Landing_pages/Pricing";
 import Faq from "@/src/components/Landing_pages/Faq";
+import Chat from "@/src/components/chat";
 
 export default function Home() {
   return (
@@ -32,6 +33,8 @@ export default function Home() {
         </section>
         <Faq />
       </main>
+
+      <Chat/>
 
       <Footer />
     </div>

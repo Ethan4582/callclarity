@@ -1,0 +1,27 @@
+1.fix the small animation eveyrwhere
+2.fix the scoll up and down animation in different components
+3.fix the mobile view  and chel them for all 
+
+
+
+/ completed 
+
+benefit_2 , footer , testmonial 
+
+
+need to be done 
+
+chatbox 
+navabar
+
+hero clean up the image ka issue 
+
+pricing , faq 
+
+
+benfits  hard 
+
+features
+
+
+

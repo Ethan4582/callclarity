@@ -1,6 +1,6 @@
 import React from 'react'
 
-const chat = () => {
+const Chat = () => {
   return (
     <div>
       
@@ -28,7 +28,7 @@ const chat = () => {
                           </div>
                           <div aria-label="H2+subtitle" className="items-center flex flex-col h-min justify-center relative w-full gap-[16px] z-[1] shrink-[0]">
                             <div className="flex flex-col justify-start relative whitespace-pre-wrap w-full max-w-[48%] shrink-[0]">
-                              <h2 className="text-center text-white text-[48px] tracking-[-2.88px] leading-[52.8px]" style={{"fontFamily":"Inter, \"Inter Placeholder\", sans-serif","textDecoration":"rgb(255, 255, 255)"}}>Are you ready to chat?</h2>
+                              <h2 className="text-center text-white text-[48px] tracking-[-2.88px] leading-[52.8px]" style={{"fontFamily":"Inter, \"Inter Placeholder\", sans-serif","textDecoration":"rgb(255, 255, 255)"}}>Are you ready to Chat?</h2>
                             </div>
                             <div className="flex flex-col justify-start relative whitespace-pre-wrap w-full max-w-[42%] shrink-[0]">
                               <p className="text-center text-[rgb(146,_146,_146)] text-[16px] tracking-[-0.8px] leading-[19.2px]" style={{"fontFamily":"Inter, sans-serif","textDecoration":"rgb(146, 146, 146)"}}>Boost productivity, accelerate creation, and make smarter  decisions with an AI that truly understands you.</p>
@@ -186,4 +186,4 @@ const chat = () => {
   )
 }
 
-export default chat
+export default Chat
