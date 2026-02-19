@@ -1,4 +1,4 @@
-import Hero from "@/src/components/Landing_pages/Hero";
+import Hero from "@/src/components/Hero/Hero";
 import Navbar from "@/src/components/Landing_pages/Navbar";
 import Feature from "@/src/components/Landing_pages/Feature";
 import Benefits from "@/src/components/Landing_pages/Benefits";
@@ -34,7 +34,7 @@ export default function Home() {
         <Faq />
       </main>
 
-      <Chat/>
+      <Chat />
 
       <Footer />
     </div>

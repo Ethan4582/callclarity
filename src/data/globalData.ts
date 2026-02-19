@@ -89,8 +89,8 @@ export const NAV_LINKS = [
 export const HERO_BADGE_TEXT = "4,000+ Calls Reviewed Daily";
 
 // Title
-export const HERO_TITLE_LINE1 = "AI Built to Review Every";
-export const HERO_TITLE_LINE2 = "Call & Flag What Matters";
+export const HERO_TITLE_LINE1 = "AI Built to Review Every Call &";
+export const HERO_TITLE_LINE2 = "Flag What Matters";
 
 // Subtitle
 export const HERO_SUBTITLE =
@@ -142,7 +142,7 @@ export const HERO_BG_TEXT = [
    "",
    "",
    "CallClarity works silently in the background — reviewing every interaction your agents have with customers. It checks adherence to your SOPs, flags risky language, and scores calls against your quality rubric automatically.",
-   "No more manual sampling. No more missed compliance issues. Get 100% coverage across voice and chat channels.",
+   "No more manual sampling. Automatically detect compliance gaps, and score agent performance. Get 100% coverage across voice and chat channels.",
    "Supervisors get actionable coaching insights. Compliance teams get audit-ready reports. Agents improve faster — all without changing your workflow or retraining your team.",
 ];
 

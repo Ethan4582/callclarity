@@ -152,16 +152,185 @@ html {
     text-decoration: rgb(146, 146, 146);
   }
 
+  /* ── Hero CTA Buttons ─────────────────────────────────────────────── */
+
   .hero-primary-btn-bg {
     background-image: linear-gradient(rgb(79, 43, 255) 0%, rgb(78, 33, 255) 17.436%, rgb(51, 0, 255) 46.6938%, rgb(42, 0, 212) 83.7363%, rgb(42, 0, 212) 99.6235%);
+  }
+
+  .hero-primary-btn-shadow {
+    box-shadow:
+      rgba(126, 33, 255, 0.72) 0px 0.602187px 1.08394px -1.25px,
+      rgba(126, 33, 255, 0.64) 0px 2.28853px 4.11936px -2.5px,
+      rgba(126, 33, 255, 0.25) 0px 10px 18px -3.75px,
+      rgba(0, 187, 255, 0.5) 0px -0.716573px 1.0032px -0.625px inset,
+      rgba(0, 187, 255, 0.5) 0px -2.17306px 3.04228px -1.25px inset,
+      rgba(0, 187, 255, 0.5) 0px -5.74439px 8.04214px -1.875px inset,
+      rgba(0, 187, 255, 0.5) 0px -18px 25.2px -2.5px inset,
+      rgb(67, 0, 191) 0px 1.71px 8px 0px inset,
+      rgb(20, 0, 82) 0px 0px 31px 1.87px inset,
+      rgba(4, 0, 61, 0.38) 0px 0.777251px 0.777251px -0.583333px,
+      rgba(4, 0, 61, 0.37) 0px 1.98722px 1.98722px -1.16667px,
+      rgba(4, 0, 61, 0.36) 0px 3.98394px 3.98394px -1.75px,
+      rgba(4, 0, 61, 0.33) 0px 7.55216px 7.55216px -2.33333px,
+      rgba(4, 0, 61, 0.28) 0px 15.0114px 15.0114px -2.91667px,
+      rgba(4, 0, 61, 0.17) 0px 33px 33px -3.5px;
   }
 
   .hero-secondary-btn-bg {
     background-image: linear-gradient(rgb(23, 23, 23) 0%, rgb(23, 23, 23) 25%, rgb(23, 23, 23) 50%, rgb(23, 23, 23) 75%, rgb(23, 23, 23) 100%);
   }
 
+  .hero-btn-text {
+    @apply text-white text-base tracking-[-0.64px] leading-[19.2px] font-inter;
+  }
+
+  /* ── Hero Globe / Orb ───────────────────────────────────────────────── */
+
   .hero-globe-shadow {
     box-shadow: inset 1.96px -1.22px 16px 0px rgb(0, 234, 255), inset -1.72px 1.48px 16px 0px rgb(38, 0, 255), inset -9.09px 0.98px 161px 0px rgba(255, 255, 255, 0.88), inset 8.59px -0.74px 11px 0px rgb(255, 255, 255), -0.47px 0.91px 0.91px 0px rgba(11, 0, 77, 0.19), -0.94px 2.15px 2.15px 0px rgba(11, 0, 77, 0.18), -1.41px 3.92px 3.92px 0px rgba(11, 0, 77, 0.18), -1.88px 6.52px 6.52px 0px rgba(11, 0, 77, 0.17), -2.34px 10.53px 10.53px 0px rgba(11, 0, 77, 0.16), -2.81px 17.23px 17.23px 0px rgba(11, 0, 77, 0.15), -3.28px 29.67px 29.67px 0px rgba(11, 0, 77, 0.12), -3.75px 54px 54px 0px rgba(11, 0, 77, 0.06), 0px 3.94px 32px 0px rgba(0, 0, 0, 0.25), 0px 7.85px 64px 0px rgba(0, 0, 0, 0.25), 0px 7.11px 182px 0px rgb(30, 0, 179);
+  }
+
+  .hero-globe-gradient {
+    background-image: linear-gradient(rgb(107, 134, 255) 0%, rgb(0, 123, 255) 48.4832%, rgb(0, 47, 255) 100%);
+  }
+
+  /* ── Hero Social Proof ──────────────────────────────────────────────── */
+
+  .hero-social-label {
+    @apply text-white text-base tracking-[-0.64px] leading-[19.2px] font-inter;
+  }
+
+  .hero-social-star {
+    @apply relative w-4 h-4 shrink-0;
+  }
+
+  .hero-social-star img {
+    @apply block w-full h-full;
+  }
+
+  .hero-social-rating {
+    @apply font-medium text-white text-base leading-6;
+    font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
+  }
+
+  /* ── Hero Title ─────────────────────────────────────────────────────── */
+
+  .hero-heading {
+    @apply text-white text-[54px] tracking-[-3.24px] leading-[54px] font-inter;
+  }
+
+  .hero-subtitle {
+    @apply text-[rgb(146_146_146)] text-base tracking-[-0.8px] leading-[19.2px] font-inter;
+  }
+
+  /* ── Hero Badge ─────────────────────────────────────────────────────── */
+
+  .hero-badge-text {
+    @apply text-white text-sm tracking-[-0.56px] leading-[15.4px] font-inter;
+  }
+
+  .hero-profile-shadow {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 2px 0px, rgba(0, 0, 0, 0.18) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.06) 0px 10px 10px -3.75px;
+  }
+
+  .hero-profile-border {
+    @apply rounded-full after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[rgb(34_34_34)] after:content-[''] after:rounded-full;
+  }
+
+  /* ── Noise Texture Overlay (shared) ─────────────────────────────────── */
+
+  .noise-overlay {
+    @apply absolute inset-0;
+  }
+
+  .noise-overlay img {
+    @apply block size-full overflow-clip;
+    aspect-ratio: auto 2000 / 2000;
+  }
+
+  /* ── Hero Illustration Card ─────────────────────────────────────────── */
+
+  .hero-card-shadow {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1.88116px 1.88116px -0.125px, rgba(0, 0, 0, 0.05) 0px 4.45867px 4.45867px -0.25px, rgba(0, 0, 0, 0.05) 0px 8.13308px 8.13308px -0.375px, rgba(0, 0, 0, 0.06) 0px 13.5212px 13.5212px -0.5px, rgba(0, 0, 0, 0.07) 0px 21.8357px 21.8357px -0.625px, rgba(0, 0, 0, 0.09) 0px 35.7429px 35.7429px -0.75px, rgba(0, 0, 0, 0.12) 0px 61.5468px 61.5468px -0.875px, rgba(0, 0, 0, 0.18) 0px 112px 112px -1px;
+  }
+
+  .hero-chat-shadow {
+    box-shadow: rgba(8, 8, 8, 0.25) 0px 29.21px 52px 0px;
+  }
+
+  .hero-illus-chip {
+    @apply items-center flex size-min justify-center overflow-hidden relative bg-[rgb(23_23_23)] gap-[17.18px] py-[8.59px] px-[13.75px] shrink-0 rounded-[0.644375rem];
+    @apply after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[rgb(20_20_20)] after:content-[''] after:rounded-[0.644375rem];
+  }
+
+  .hero-illus-chip p {
+    @apply font-medium text-white text-base tracking-[-0.48px] leading-4 font-inter whitespace-pre shrink-0;
+  }
+
+  .hero-illus-icon-btn {
+    @apply items-center flex size-min justify-center overflow-hidden relative bg-black/[0.32] p-[6.61px] shrink-0 rounded-[0.49625rem];
+  }
+
+  .hero-illus-icon-img {
+    @apply block size-full;
+  }
+
+  /* ── Hero Componet BG ───────────────────────────────────────────────── */
+
+  .hero-bg-gradient {
+    background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(2, 0, 105, 0.88) 83%, rgba(30, 0, 71, 0.88) 100%);
+  }
+
+  .hero-radial-overlay {
+    background-image: radial-gradient(50% 36%, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 100%);
+  }
+
+  .hero-bg-para {
+    @apply text-white/55 text-base tracking-[-0.32px] leading-[25.6px] font-inter;
+  }
+
+  .hero-ctx-btn {
+    @apply items-center flex size-min justify-center overflow-hidden relative gap-[8px] py-[10px] pr-3 pl-[10px] shrink-0 rounded-[0.625rem];
+    @apply after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[rgb(20_20_20)] after:content-[''] after:rounded-[0.625rem];
+  }
+
+  .hero-ctx-btn-text {
+    @apply text-white text-[17px] tracking-[-0.68px] leading-[17px] font-inter whitespace-pre shrink-0;
+  }
+
+  .hero-ctx-divider {
+    @apply relative w-px h-[17px] shrink-0;
+  }
+
+  .hero-ctx-divider img {
+    @apply block size-full;
+  }
+
+  .hero-ctx-icon {
+    @apply aspect-square relative w-[18px] shrink-0 opacity-95;
+  }
+
+  .hero-ctx-icon img {
+    @apply block size-full;
+  }
+
+  /* ── Common border overlay (after pseudo) ───────────────────────────── */
+
+  .border-overlay-dark {
+    @apply after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[rgb(23_23_23)] after:content-[''] after:rounded-full;
+  }
+
+  .border-overlay-chat {
+    @apply after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[rgb(23_23_23)] after:content-[''] after:rounded-[1.718125rem];
+  }
+
+  .border-overlay-menu {
+    @apply after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[rgb(25_25_25)] after:content-[''] after:rounded-[0.8125rem];
+  }
+
+  .border-overlay-secondary {
+    @apply after:border after:size-full after:pointer-events-none after:absolute after:text-center after:left-0 after:top-0 after:border-[rgb(34_34_34)] after:content-[''] after:rounded-[0.9775rem];
   }
 
 }
