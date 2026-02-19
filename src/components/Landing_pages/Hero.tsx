@@ -1,11 +1,11 @@
 import React from 'react'
 
 import Marquee from '../marquee'
-import HeroStartBadge from './HeroStartBadge'
-import HeroTitle from './HeroTitle'
-import HeroActions from './HeroActions'
-import HeroSocial from './HeroSocial'
-import HeroIllustration from './HeroIllustration'
+import HeroStartBadge from '../HeroStartBadge'
+import HeroTitle from '../HeroTitle'
+import HeroActions from '../HeroActions'
+import HeroSocial from '../HeroSocial'
+import HeroIllustration from '../HeroIllustration'
 
 const Hero = () => {
   return (

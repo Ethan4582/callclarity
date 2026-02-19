@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero_component from '../hero_componet'
+import Hero_component from './hero_componet'
 
 const HeroIllustration = () => {
    return (
