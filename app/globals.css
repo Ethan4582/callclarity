@@ -16,6 +16,11 @@
   --font-poppins: "Poppins", "Poppins Placeholder", sans-serif;
   --font-joan: "Joan", "Joan Placeholder", serif;
   --font-intel: "Intel One Mono", monospace;
+  --font-lily: "Lily Script One", sans-serif;
+}
+
+.shadow-globe-testimonial {
+  box-shadow: rgb(0, 234, 255) 1.23px -0.77px 16px 0px inset, rgb(38, 0, 255) -1.08px 0.94px 16px 0px inset, rgba(255, 255, 255, 0.88) -5.73px 0.62px 161px 0px inset, rgb(255, 255, 255) 5.43px -0.46px 11px 0px inset, rgba(11, 0, 77, 0.19) 0px 0.906986px 0.906986px -0.46875px, rgba(11, 0, 77, 0.18) 0px 2.14972px 2.14972px -0.9375px, rgba(11, 0, 77, 0.18) 0px 3.92131px 3.92131px -1.40625px, rgba(11, 0, 77, 0.17) 0px 6.51917px 6.51917px -1.875px, rgba(11, 0, 77, 0.16) 0px 10.5279px 10.5279px -2.34375px, rgba(11, 0, 77, 0.15) 0px 17.2332px 17.2332px -2.8125px, rgba(11, 0, 77, 0.12) 0px 29.6743px 29.6743px -3.28125px, rgba(11, 0, 77, 0.06) 0px 54px 54px -3.75px, rgba(0, 0, 0, 0.25) 0px 2.48px 32px 0px, rgba(0, 0, 0, 0.25) 0px 4.95px 64px 0px, rgb(30, 0, 179) 0px 4.49px 182px 0px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,6 +41,33 @@ html {
 }
 
 /* Marquee Animation */
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(13, 13, 14, 0.95) 0%, transparent 100%);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(13, 13, 14, 0.95) 0%, transparent 100%);
+}
+
 .marquee {
   width: 100%;
   overflow: hidden;
@@ -44,20 +76,18 @@ html {
 .marquee-track {
   display: inline-flex;
   align-items: center;
-  gap: 40px;
+  gap: 16px;
   width: max-content;
   will-change: transform;
-  animation: marquee 20s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 .marquee-track.reverse {
   animation-direction: reverse;
 }
 
-@media (min-width: 768px) {
-  .marquee-track {
-    gap: 75px;
-  }
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
 }
 
 @keyframes marquee {
