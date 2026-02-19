@@ -407,3 +407,19 @@ html {
   font-weight: 400;
   src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F46c3c57a9ea339acee13db243296a63b0327ae43?generation=1771443077847519&alt=media') format('woff2');
 }
+
+/* ── Animation: Marquee ─────────────────────────────────────────────── */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-infinite {
+  animation: marquee 35s linear infinite;
+}

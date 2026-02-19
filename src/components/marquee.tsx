@@ -1,15 +1,19 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+
+// ─── Logo Components ──────────────────────────────────────────────────────────
 
 const LogoAirLab = () => (
    <div className="flex items-center gap-1 opacity-70">
       <div className="relative w-[15px] h-4 shrink-0">
-         <div className="absolute top-px left-[calc(46.6%-3px)] w-[6px] h-2 bg-white rounded-bl-sm rounded-tr-sm -rotate-[23deg] overflow-clip"></div>
-         <div className="absolute bottom-0 left-2 w-1 h-[6px] bg-white rounded-bl-sm rounded-tr-sm -rotate-[23deg] overflow-clip"></div>
-         <div className="absolute bottom-[5px] left-px w-1 h-[5px] bg-white rounded-bl-sm rounded-tr-sm -rotate-[4deg] overflow-clip"></div>
+         <div className="absolute top-px left-[calc(46.6%-3px)] w-[6px] h-2 bg-white rounded-bl-sm rounded-tr-sm -rotate-[23deg] overflow-clip" />
+         <div className="absolute bottom-0 left-2 w-1 h-[6px] bg-white rounded-bl-sm rounded-tr-sm -rotate-[23deg] overflow-clip" />
+         <div className="absolute bottom-[5px] left-px w-1 h-[5px] bg-white rounded-bl-sm rounded-tr-sm -rotate-[4deg] overflow-clip" />
       </div>
       <span className="text-[20px] font-medium italic text-white font-poppins leading-4 tracking-[-1.2px]">AirLab</span>
    </div>
 )
+
 const LogoLumean = () => (
    <div className="flex items-center gap-1 opacity-70">
       <div className="relative w-[23px] h-4 shrink-0">
@@ -23,6 +27,7 @@ const LogoLumean = () => (
       <span className="text-[20px] text-white font-joan leading-4 tracking-[-1.2px]">Lumean</span>
    </div>
 )
+
 const LogoCraftnet = () => (
    <div className="flex items-center gap-1 opacity-70">
       <div className="relative w-[15px] h-4 shrink-0">
@@ -36,48 +41,39 @@ const LogoCraftnet = () => (
       <span className="text-[20px] font-medium text-white font-inter leading-4 tracking-[-0.8px]">Craftnet</span>
    </div>
 )
+
 const LogoAventra = () => (
    <div className="flex items-center gap-1 opacity-70 " >
       <div className="relative w-[15px] h-4 shrink-0">
-         <div className="absolute left-[6px] -bottom-px w-[6px] h-4 bg-white rounded-bl-sm rounded-tr-sm -rotate-[23deg] opacity-70 overflow-clip"></div>
+         <div className="absolute left-[6px] -bottom-px w-[6px] h-4 bg-white rounded-bl-sm rounded-tr-sm -rotate-[23deg] opacity-70 overflow-clip" />
          <svg viewBox="0 0 6 6" className="absolute top-[10px] left-0 w-[6px] h-[6px] fill-white opacity-70">
-            <path d="M 2.991 0 C 4.643 0 5.982 1.339 5.982 2.991 C 5.982 4.643 4.643 5.982 2.991 5.982 C 1.339 5.982 0 4.643 0 2.991 C 0 1.339 1.339 0 2.991 0 Z" />
+            <path d="M 2.991 0 C 4.643 0 5.982 1.339 5.982 2.991 C 5.982 4.643 4.643 5.982 2.991 5.982 C 1.339 5.982 0 4.643 0 2.991 0 Z" />
          </svg>
       </div>
       <span className="text-[20px] font-medium text-white font-intel leading-4 tracking-[-1.2px]">Aventra</span>
    </div>
 )
 
-const baseLogos = [
-   LogoAirLab,
-   LogoLumean,
-   LogoCraftnet,
-   LogoAventra,
-]
+const baseLogos = [LogoAirLab, LogoLumean, LogoCraftnet, LogoAventra]
 const logoList = [...baseLogos, ...baseLogos]
+
+// ─── Marquee Component ────────────────────────────────────────────────────────
 
 const Marquee = () => {
    return (
-      <div className="w-full flex flex-col items-center justify-center gap-6 pb-6 overflow-hidden" >
+      <div className="w-full flex flex-col items-center justify-center gap-6 pb-6 overflow-hidden">
          <p className="text-[14px] tracking-[-0.56px] leading-[15.4px] text-[rgb(146,146,146)] font-inter">
             Trusted by companies worldwide
          </p>
-         <div className="relative w-full overflow-hidden">
-            {/* Left fade */}
-            <div style={{
-               position:'absolute', left:0, top:0, bottom:0, width:'120px', zIndex:2,
-               background:'linear-gradient(to right, #111 10%, transparent 100%)',
-               pointerEvents:'none'
-            }} />
-            {/* Right fade */}
-            <div style={{
-               position:'absolute', right:0, top:0, bottom:0, width:'120px', zIndex:2,
-               background:'linear-gradient(to left, #111 10%, transparent 100%)',
-               pointerEvents:'none'
-            }} />
 
+         <div className="relative w-full overflow-hidden">
+            {/* Gradient Fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-[120px] z-[2] pointer-events-none bg-gradient-to-r from-[#111] via-[#111]/80 to-transparent" />
+            <div className="absolute right-0 top-0 bottom-0 w-[120px] z-[2] pointer-events-none bg-gradient-to-l from-[#111] via-[#111]/80 to-transparent" />
+
+            {/* Scrolling Track */}
             <div className="flex">
-               <div className="flex gap-10 md:gap-20" style={{animation:'marquee 35s linear infinite', whiteSpace:'nowrap'}}>
+               <div className="flex gap-10 md:gap-20 animate-marquee-infinite whitespace-nowrap">
                   {[...logoList, ...logoList].map((Logo, i) => (
                      <div key={i} className="shrink-0">
                         <Logo />
@@ -86,13 +82,6 @@ const Marquee = () => {
                </div>
             </div>
          </div>
-
-         <style>{`
-            @keyframes marquee {
-               0%   { transform: translateX(0); }
-               100% { transform: translateX(-50%); }
-            }
-         `}</style>
       </div>
    )
 }

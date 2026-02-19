@@ -12,10 +12,12 @@ import Chat from "@/src/components/chat";
 export default function Home() {
   return (
     <div className="bg-black min-h-screen text-white font-sans overflow-x-hidden">
-      <div className="max-w-[1440px] mx-auto relative flex flex-col">
-        <Navbar />
-        <Hero />
-      </div>
+   <div className="max-w-[1440px] mx-auto relative flex flex-col">
+  <Navbar />
+  {/* mobile-only spacer to push hero down away from navbar */}
+  <div className="md:hidden h-15" />
+  <Hero />
+</div>
 
       <main className="flex flex-col gap-0 w-full">
         <section id="features">
