@@ -2,6 +2,16 @@
 
 ![CallClarity Preview](public/assets/hero.png)
 
+(public/assets/features.png)
+
+(public/assets/testmonial.png)
+
+(public/assets/pricing.png)
+
+(public/assets/footer.png)
+
+
+
 AI that reviews all support conversations, checks SOP compliance, flags risks, and automates QA.
 
 **Tech Stack:** Next.js • React • Tailwind CSS • Framer Motion • TypeScript
