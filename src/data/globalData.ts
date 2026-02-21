@@ -304,29 +304,29 @@ export const PRICING_PLANS: PricingPlan[] = [
 
 // ─── Feature Section Data ────────────────────────────────────────────────────
 export const FEATURE_BADGE_TEXT = "Our Features";
-export const FEATURE_HEADING = "Unlock all the helpful features  with ChatFrame";
+export const FEATURE_HEADING = "Unlock all the helpful features with CallClarity";
 
 export const FEATURE_CARDS = [
    {
-      title: "Team collaboration",
-      description: "Work together in real time, share ideas instantly, and keep everyone aligned.",
-      id: "collaboration"
+      title: "Automated call review",
+      description: "Analyze every conversation instantly, detect compliance gaps, and improve support quality.",
+      id: "call-review"
    },
    {
-      title: "More customization",
-      description: "Tailor every detail to your workflow, ensuring a design system built for you.",
-      id: "customization"
+      title: "SOP compliance checks",
+      description: "Ensure agents follow policies consistently, reduce risks, and maintain regulatory standards.",
+      id: "compliance"
    },
    {
-      title: "Works like Siri",
-      description: "Get instant support, organize tasks with ease, and simplify operations.",
-      id: "siri"
+      title: "AI performance insights",
+      description: "Track agent performance trends, uncover sentiment patterns, and coach teams effectively.",
+      id: "insights"
    }
 ];
 
 export const FEATURE_CTA_DATA = {
    question: "You have a question?",
    buttonText: "Send an Email",
-   buttonHref: "https://chatframe.framer.website/contact"
+   buttonHref: "mailto:hello@callclarity.ai"
 };
 

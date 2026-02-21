@@ -1,5 +1,5 @@
 import React from 'react';
-import { FEATURE_BADGE_TEXT, FEATURE_HEADING, LOGO_BLUR_IMG } from '../../../data/globalData';
+import { FEATURE_BADGE_TEXT, FEATURE_HEADING, LOGO_BLUR_IMG } from '../../data/globalData';
 
 const FeatureHeader = () => {
    return (

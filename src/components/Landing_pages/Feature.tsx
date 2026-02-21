@@ -1,8 +1,8 @@
 import React from 'react';
 import { FEATURE_CARDS } from '../../data/globalData';
-import FeatureHeader from './Feature/FeatureHeader';
-import FeatureCard from './Feature/FeatureCard';
-import FeatureCTA from './Feature/FeatureCTA';
+import FeatureHeader from '../Feature/FeatureHeader';
+import FeatureCard from '../Feature/FeatureCard';
+import FeatureCTA from '../Feature/FeatureCTA';
 
 const Feature = () => {
   return (

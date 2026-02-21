@@ -1,5 +1,5 @@
 import React from 'react';
-import { FEATURE_CTA_DATA, NOISE_TEXTURE } from '../../../data/globalData';
+import { FEATURE_CTA_DATA, NOISE_TEXTURE } from '../../data/globalData';
 
 const FeatureCTA = () => {
    return (

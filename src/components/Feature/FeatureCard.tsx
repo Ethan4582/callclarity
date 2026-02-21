@@ -1,5 +1,5 @@
 import React from 'react';
-import { NOISE_TEXTURE } from '../../../data/globalData';
+import { NOISE_TEXTURE } from '../../data/globalData';
 import { CollaborationIllustration, CustomizationIllustration, SiriIllustration } from './FeatureIllustrations';
 
 interface FeatureCardProps {
@@ -11,11 +11,11 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, id }) => {
    const renderIllustration = () => {
       switch (id) {
-         case 'collaboration':
+         case 'call-review':
             return <CollaborationIllustration />;
-         case 'customization':
+         case 'compliance':
             return <CustomizationIllustration />;
-         case 'siri':
+         case 'insights':
             return <SiriIllustration />;
          default:
             return null;
