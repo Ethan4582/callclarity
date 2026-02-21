@@ -14,67 +14,146 @@ import Globe from '../Globe'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 }
 
 const fadeInLeft = {
   hidden: { opacity: 0, x: -40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 }
 
 const fadeInRight = {
   hidden: { opacity: 0, x: 40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 }
 
 // Subcomponents for mockups to keep main component clean
-const ChatListMockup = () => (
-  <div className="flex flex-col gap-2.5 p-2.5 min-h-[358px] mt-11 w-full bg-black rounded-t-[3.4rem] shadow-2xl overflow-hidden relative border-t border-white/10">
-    <div className="flex flex-col gap-2.5 px-2.5 translate-y-[10px]">
-      {[...Array(4)].map((_, i) => (
-        <div key={i} className="flex relative items-center justify-between p-3.5 rounded-xl bg-[#121212] border border-[#262626]/40 h-[65px] z-10 w-full mb-1">
-          <div className="absolute inset-0 opacity-20 pointer-events-none rounded-[inherit]">
-            <img src={NOISE_TEXTURE} alt="" className="w-full h-full object-cover rounded-[inherit] mix-blend-overlay" />
-          </div>
-          <div className="flex items-center gap-3 relative z-[1]">
-            <div className={`w-2 h-2 rounded-full ${i % 2 === 0 ? 'bg-[#00ff51]' : 'bg-white'}`} style={{ boxShadow: i % 2 === 0 ? '0 0 10px #00ff51' : 'none' }} />
-            <div className="flex flex-col">
-              <span className="text-white text-[16px] font-medium leading-none mb-1">Message</span>
-              <span className="text-white/70 text-[14px] leading-none">Community</span>
+const ChatListMockup = () => {
+  const items = [
+    { status: 'green', time: 'New', gradient: true },
+    { status: 'white', time: '12m', gradient: false },
+    { status: 'green', time: 'New', gradient: true },
+    { status: 'white', time: '12m', gradient: false },
+    { status: 'green', time: 'New', gradient: true },
+    { status: 'white', time: '18m', gradient: false },
+    { status: 'green', time: 'New', gradient: true },
+    { status: 'white', time: '24m', gradient: false },
+  ]
+
+  // Double items for seamless infinite scroll
+  const scrollingItems = [...items, ...items]
+
+  return (
+    <div className="flex flex-col p-2.5 min-h-[358px] mt-11 w-full bg-black rounded-t-[3.4rem] overflow-hidden relative border-t border-[#1a1a1a]">
+
+      {/* Background blueish gradient at the bottom behind the scrolling items */}
+      <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#1b1c61]/40 to-transparent z-[5] pointer-events-none" />
+
+      {/* Top blur fade */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black via-black/90 to-transparent z-20 pointer-events-none" />
+
+      <motion.div
+        className="flex flex-col gap-2.5 px-2.5 translate-y-[10px] relative z-10"
+        animate={{ y: [0, -600] }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        {scrollingItems.map((item, i) => (
+          <div
+            key={i}
+            className={`flex relative items-center justify-between p-3.5 rounded-xl border border-[#262626]/40 h-[65px] shrink-0 z-10 w-full mb-1 overflow-hidden ${item.gradient
+              ? 'bg-[#101010]'
+              : 'bg-[#121212]'
+              }`}
+          >
+            <div className="absolute inset-0 opacity-20 pointer-events-none rounded-[inherit]">
+              <img src={NOISE_TEXTURE} alt="" className="w-full h-full object-cover rounded-[inherit] mix-blend-overlay" />
             </div>
+
+            {/* Colorful custom gradient overlay matching the image */}
+            {item.gradient && (
+              <div className="absolute inset-0 bg-gradient-to-r from-[#5a1bdf]/40 via-[#103eb8]/40 to-transparent mix-blend-screen pointer-events-none" />
+            )}
+
+            <div className="flex items-center gap-3 relative z-[1]">
+              <div
+                className={`w-2 h-2 rounded-full ${item.status === 'green' ? 'bg-[#00ff51]' : 'bg-white'}`}
+                style={{ boxShadow: item.status === 'green' ? '0 0 10px #00ff51' : 'none' }}
+              />
+              <div className="flex flex-col">
+                <span className="text-white text-[16px] font-medium leading-none mb-1 text-shadow-sm">Message</span>
+                <span className="text-white/70 text-[14px] leading-none">Community</span>
+              </div>
+            </div>
+            <span className="text-white text-[16px] font-medium relative z-[1]">{item.time}</span>
           </div>
-          <span className="text-white text-[16px] font-medium relative z-[1]">{i % 2 === 0 ? 'New' : '12m'}</span>
-        </div>
-      ))}
+        ))}
+      </motion.div>
+
+      {/* Bottom blur fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#030303] via-[#030303]/90 to-transparent z-20 pointer-events-none" />
     </div>
+  )
+}
+
+const Chip = ({ text, isGradient }: { text: string, isGradient: boolean }) => (
+  <div className={`flex items-center justify-center whitespace-nowrap px-4 py-2 rounded-full border border-white/[0.06] ${isGradient ? 'bg-gradient-to-r from-[#170533] to-[#040145] text-white shadow-[0_0_15px_rgba(71,2,161,0.2)]' : 'bg-[#111111]/30 text-[#666666]'} text-[13px] tracking-tight`}>
+    {text}
   </div>
 )
 
 const AppScreenMockup = () => {
-  const chips = ["ChatFrame AI", "Access", "Application", "Works like siri", "Work smarter"]
+  const chips = ["Callclarity AI", "Access", "Application", "Works like siri", "Work smarter"]
+  const chipsRow1 = [...chips, ...chips, ...chips, ...chips]
+  const chipsRow2 = [...chips, ...chips, ...chips, ...chips].reverse()
+  const chipsRow3 = [...chips.slice(1), ...chips, ...chips, ...chips]
   return (
-    <div className="flex flex-col gap-2.5 p-2.5 min-h-[358px] mb-8 w-full bg-black rounded-t-[3.4rem] shadow-2xl overflow-hidden relative border-t border-white/10">
-      <div className="flex gap-2.5 mt-8 overflow-hidden px-2 -translate-x-[40px] z-10">
-        {chips.map((c, i) => (
-          <div key={i} className={`flex items-center whitespace-nowrap px-3 py-2 rounded-full border border-[#222]/55 ${i % 2 === 0 ? 'bg-[#171717]/40 text-white/60' : 'bg-gradient-to-tr from-black to-[#4702a1] text-white/90'} text-sm`}>
-            {c}
-          </div>
-        ))}
-      </div>
-      <div className="flex gap-2.5 overflow-hidden px-2 -translate-x-[60px] z-10">
-        {chips.reverse().map((c, i) => (
-          <div key={i} className={`flex items-center whitespace-nowrap px-3 py-2 rounded-full border border-[#222]/55 ${i % 2 !== 0 ? 'bg-[#171717]/40 text-white/60' : 'bg-gradient-to-tr from-black to-[#4702a1] text-white/90'} text-sm`}>
-            {c}
-          </div>
-        ))}
+    <div className="flex flex-col p-2.5 min-h-[358px] mt-11 w-full bg-black rounded-t-[3.4rem] overflow-hidden relative border-t border-[#1a1a1a]">
+      {/* Top blur fade */}
+      <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black via-black/80 to-transparent z-20 pointer-events-none" />
+
+      <div className="absolute top-1/2 left-0 right-0 -translate-y-[65%] flex flex-col gap-3.5 z-10 w-full overflow-visible opacity-90">
+        <motion.div
+          className="flex gap-3 px-2 w-max"
+          animate={{ x: [0, -500] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        >
+          {chipsRow1.map((c, i) => (
+            <Chip key={`r1-${i}`} text={c} isGradient={i % 4 === 2} />
+          ))}
+        </motion.div>
+        <motion.div
+          className="flex gap-3 px-2 w-max"
+          animate={{ x: [-500, 0] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear", delay: 1 }}
+        >
+          {chipsRow2.map((c, i) => (
+            <Chip key={`r2-${i}`} text={c} isGradient={i % 5 === 1} />
+          ))}
+        </motion.div>
+        <motion.div
+          className="flex gap-3 px-2 w-max"
+          animate={{ x: [0, -500] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+        >
+          {chipsRow3.map((c, i) => (
+            <Chip key={`r3-${i}`} text={c} isGradient={i % 4 === 0} />
+          ))}
+        </motion.div>
       </div>
 
-      <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex flex-col items-center gap-4 z-20">
-        <div className="w-36 h-36 rounded-[2.1rem] bg-[#262626]/40 backdrop-blur-sm border border-[#363636] flex items-center justify-center relative shadow-xl">
-          <Globe size="w-[88px] h-[88px] aspect-square z-[5] rounded-full" />
+      <div className="absolute top-1/2 left-[50%] -translate-x-1/2 -translate-y-[45%] flex flex-col items-center gap-4 z-30">
+        <div className="w-[124px] h-[124px] rounded-[1.8rem] bg-gradient-to-br from-white/[0.08] to-transparent backdrop-blur-[12px] border border-white/10 flex items-center justify-center relative shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+          <Globe size="w-[80px] h-[80px] aspect-square z-[5] rounded-full" />
         </div>
-        <span className="text-white text-base font-medium">ChatFrame</span>
+        <span className="text-white text-[15px] font-medium tracking-tight">Callclarity</span>
       </div>
+
+      {/* Bottom blur fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black via-black/90 to-transparent z-20 pointer-events-none" />
     </div>
   )
 }
@@ -83,7 +162,7 @@ const VoiceChatMockup = () => (
   <div className="flex flex-col items-center gap-7 pt-11 px-8 min-h-[358px] w-full bg-black rounded-t-[3.4rem] shadow-2xl overflow-hidden relative border-t border-white/10">
     <div className="flex flex-col gap-1 w-full z-10">
       <div className="w-full bg-gradient-to-tr from-[#001629] via-[#000552] to-[#4702a1] px-3.5 pt-2.5 pb-2.5 rounded-2xl border border-white/10 opacity-80 backdrop-blur-sm">
-        <p className="text-white text-lg tracking-tight">Ask ChatFrame...</p>
+        <p className="text-white text-lg tracking-tight">Ask Callclarity...</p>
       </div>
       <div className="w-full bg-[#17161f]/70 p-3.5 rounded-2xl border border-white/10 backdrop-blur-sm">
         <p className="text-[#929292] text-sm leading-relaxed">
@@ -91,15 +170,30 @@ const VoiceChatMockup = () => (
         </p>
       </div>
     </div>
-    <div className="relative mt-auto w-[79px] h-[79px] shrink-0 mb-4 z-10">
-      <Globe size="w-[79px] h-[79px] aspect-square rounded-full" degrees={240} duration={10} />
-    </div>
+    <motion.div
+      className="absolute w-[45px] aspect-square left-1/2 -translate-x-1/2 bottom-[50px] rounded-full z-[1] rotate-[101deg] shadow-globe-testimonial bg-globe-gradient flex items-center justify-center p-0 m-0"
+      animate={{
+        scale: [0.7, 1.85, 0.7],
+        filter: ["brightness(1)", "brightness(1.4)", "brightness(1)"],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    >
+      <div className="absolute w-[180px] h-[180px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full pointer-events-none flex items-center justify-center">
+        <Globe degrees={320} duration={1} />
+      </div>
+    </motion.div>
   </div>
 )
 
 const MockupContainer = ({ children }: { children: React.ReactNode }) => (
-  <div className="relative w-full max-w-[452px] h-[390px] shrink-0 flex items-end justify-center rounded-[2.3rem] overflow-hidden bg-[#262626]/40 px-10">
-    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-0" />
+  <div className="relative w-full max-w-[452px] h-[390px] shrink-0 flex items-end justify-center rounded-[2.3rem] overflow-hidden bg-[#141414]/80 px-10 border border-white/5 shadow-2xl">
+    {/* Blue glow at the bottom behind the phone */}
+    <div className="absolute bottom-0 left-0 right-0 h-[70%] bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#1d2799]/40 via-[#0e1040]/10 to-transparent pointer-events-none z-0" />
+    <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-[#101968]/50 to-transparent pointer-events-none z-0" />
     <div className="absolute inset-0 opacity-10 pointer-events-none z-0 mix-blend-overlay">
       <img src={NOISE_TEXTURE} className="w-full h-full object-cover" alt="" />
     </div>

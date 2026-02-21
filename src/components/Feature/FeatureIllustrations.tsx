@@ -355,7 +355,7 @@ export const SiriIllustration = () => (
 
       <div className="absolute left-1/2 top-[34%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 z-[1]">
          <div className="flex items-center self-stretch bg-siri-input p-2 pr-[14px] pl-[10px] rounded-xl border border-white/10 backdrop-blur-[2px]">
-            <p className="text-white text-[17px] tracking-tight leading-[22px]">Ask ChatFrame...</p>
+            <p className="text-white text-[17px] tracking-tight leading-[22px]">Ask Callclarity...</p>
          </div>
          <div className="w-[206px] bg-[#17161f] p-[11px] rounded-[0.875rem] border border-white/10 backdrop-blur-[2px]">
             <p className="text-[#999999] tracking-tight leading-[15.6px] text-sm">

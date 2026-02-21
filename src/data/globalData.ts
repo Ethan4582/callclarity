@@ -70,9 +70,9 @@ export const FOOTER_PAGE_LINKS = [
 ];
 
 export const FOOTER_SOCIAL_LINKS = [
-   { label: 'Twitter/X', href: 'https://x.com/' },
-   { label: 'Instagram', href: 'https://instagram.com/' },
-   { label: 'LinkedIn', href: 'https://linkedin.com/' },
+   { label: 'Twitter/X', href: 'https://x.com/SinghAshir65848' },
+   { label: 'Instagram', href: 'https://ash-cv.vercel.app/' },
+   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ashirwad08singh/' },
 ];
 
 // ─── Navbar Links ─────────────────────────────────────────────────────────────
@@ -334,7 +334,7 @@ export const FEATURE_CTA_DATA = {
 export const CHAT_BADGE_TEXT = "Get Started";
 export const CHAT_HEADING = "Want to Chat?";
 export const CHAT_SUBTITLE = "Boost productivity, accelerate creation, and make smarter decisions with an AI that truly understands you.";
-export const CHAT_TITLE = "ChatFrame";
+export const CHAT_TITLE = "Callclarity";
 export const CHAT_PLACEHOLDER = "Ask me anything...";
 
 export const CHAT_TASKS = [
@@ -345,8 +345,8 @@ export const CHAT_TASKS = [
 ];
 
 export const CHAT_NAV_LINKS = [
-   { label: "Get Started", href: "https://framer.link/RmHInmd", isPrimary: true },
-   { label: "Join Community", href: "https://framer.link/RmHInmd", isPrimary: false },
+   { label: "Get Started", href: "/", isPrimary: true },
+   { label: "Join Community", href: "/", isPrimary: false },
 ];
 
 export const CHAT_ACTION_ICONS = [
@@ -360,26 +360,26 @@ export const CHAT_MIC_ICON = "M 14.683 5.652 L 14.488 6.101 C 14.426 6.25 14.28 
 export const CHAT_SEND_ICON_URL = "https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2Fdf73df575e11a39aa9b8a14df50131b8aee7df65.svg?generation=1771443084381506&alt=media";
 
 // ─── New Benefits Section Data ────────────────────────────────────────────────
-export const NEW_BENEFITS_BADGE = "New Benefits";
-export const NEW_BENEFITS_HEADING = "Our new benefits for those\nwho join the community.";
+export const NEW_BENEFITS_BADGE = "AI Analysis Platform";
+export const NEW_BENEFITS_HEADING = "Enhance customer support\nwith automated AI analysis.";
 
 export const NEW_BENEFITS_CARDS = [
    {
-      chips: ["New Updates", "Information"],
-      title: "Become part of our\ncommunity and stay\ninformed.",
+      chips: ["SOP Checks", "Policy Compliance"],
+      title: "Evaluate conversations\nagainst SOPs to ensure\nagent compliance.",
       imageType: "chat-list",
    },
    {
-      chips: ["Mobile App", "Access"],
-      title: "Exclusive access to\nthe mobile application.",
+      chips: ["Risk Detection", "Violations"],
+      title: "Detect compliance risks like missed disclosures\nor risky statements.",
       imageType: "app-screen",
    },
    {
-      chips: ["Free Trial", "Voice Chat"],
-      title: "Three month free trial\nfor the voice chat.",
+      chips: ["Automated QA", "100% Coverage"],
+      title: "Automate QA coverage\nby reviewing 100% of\nall interactions.",
       imageType: "voice-chat",
    }
 ];
 
-export const NEW_BENEFITS_CTA_LABEL = "Join Community";
-export const NEW_BENEFITS_CTA_HREF = "https://framer.link/RmHInmd";
+export const NEW_BENEFITS_CTA_LABEL = "Start Analyzing";
+export const NEW_BENEFITS_CTA_HREF = "#";

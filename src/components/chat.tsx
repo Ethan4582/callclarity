@@ -30,7 +30,7 @@ const Chat = () => {
   return (
     <div className="w-full relative overflow-hidden">
       <section
-        aria-label="ChatFrame-UI"
+        aria-label="Callclarity-UI"
         className="items-center flex h-min justify-center relative w-full pt-16 px-5 md:pt-[100px] md:pr-[100px] md:pb-0 md:pl-[100px] shrink-[0]"
       >
         <div
@@ -95,7 +95,7 @@ const Chat = () => {
           >
             <div className="absolute w-full left-0 top-0 z-[1]">
               <div
-                aria-label="ChatFrame UI"
+                aria-label="Callclarity UI"
                 className="items-center flex flex-col h-min justify-center overflow-clip relative w-full gap-[10px] rounded-[1.25rem]"
               >
                 <div
@@ -229,7 +229,7 @@ const Chat = () => {
 
                       {/* Left: Branding */}
                       <div className="relative shrink-0 w-full md:w-auto flex justify-center md:justify-start">
-                        <a href="https://chatframe.framer.website/" aria-label="Variant 1" className="items-center flex size-min justify-center overflow-hidden relative bg-[#5e5e5e]/15 text-[#0000ee] gap-[6.87px] p-[6.87px] rounded-full hover:opacity-80 transition-opacity">
+                        <a href="/" aria-label="Variant 1" className="items-center flex size-min justify-center overflow-hidden relative bg-[#5e5e5e]/15 text-[#0000ee] gap-[6.87px] p-[6.87px] rounded-full hover:opacity-80 transition-opacity">
                           <div aria-label="Globe" className="aspect-square overflow-hidden relative w-[27px] shadow-globe-testimonial bg-globe-gradient z-[5] shrink-0 rounded-full">
                             <div aria-label="Blur" className="absolute -left-[13px] -right-[9px] -bottom-[8px] aspect-[1.15385/1]">
                               <img src={LOGO_BLUR_IMG} className="block size-full object-cover overflow-clip" alt="Globe blur" />
@@ -237,7 +237,7 @@ const Chat = () => {
                           </div>
                           <div className="flex flex-col justify-start relative whitespace-pre shrink-0">
                             <p className="text-white/90 text-[17px] tracking-tight leading-[17px] font-geist">
-                              <span className="font-medium">ChatFrame</span>
+                              <span className="font-medium">Callclarity</span>
                             </p>
                           </div>
                         </a>
