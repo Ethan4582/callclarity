@@ -12,6 +12,7 @@ import {
    HERO_ICON_MIC,
    HERO_ICON_SEND,
 } from '../../data/globalData'
+import Globe from '../Globe'
 
 const TOOLBAR_ICONS = [
    { label: 'Plus', src: HERO_ICON_PLUS, w: 'w-[19px] h-[19px]' },
@@ -30,15 +31,8 @@ const HeroIllustration = () => {
             >
                {/* Top — AI Label */}
                <div aria-label="Top" className="items-center flex h-min justify-between overflow-hidden relative w-full shrink-0">
-                  <div aria-label="Name+Globe" className="items-center flex size-min justify-center overflow-hidden relative bg-black/15 gap-[6.87px] py-[6.87px] pr-[13.75px] pl-[6.87px] shrink-0 rounded-[1.718125rem]">
-                     <div
-                        aria-label="Globe"
-                        className="aspect-square overflow-hidden relative w-[27px] hero-globe-shadow hero-globe-gradient rotate-[122.536deg] z-[5] shrink-0 rounded-[0.859375rem]"
-                     >
-                        <div aria-label="Blur" className="absolute left-[-14px] right-[-14px] bottom-[-11px] aspect-[1.15385/1] rotate-[122.536deg]">
-                           <img src={LOGO_BLUR_IMG} className="absolute inset-0 block size-full object-cover overflow-clip" alt="" />
-                        </div>
-                     </div>
+                  <div aria-label="Name+Globe" className="items-center flex size-min justify-center overflow-hidden relative bg-black/15 gap-[2px] pr-[13.75px] pl-[6.87px] rounded-[1.718125rem]">
+                     <Globe className='scale-60' duration={3} degrees={40} />
                      <p className="hero-btn-text relative whitespace-pre shrink-0">{HERO_ILLUS_AI_LABEL}</p>
                   </div>
                </div>

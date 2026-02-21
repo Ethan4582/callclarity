@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { LOGO_BLUR_IMG, NOISE_TEXTURE, ARROW_RIGHT_ICON, BENEFITS_DATA } from '../../data/globalData';
+import Globe from '../Globe';
+import { NOISE_TEXTURE, ARROW_RIGHT_ICON, BENEFITS_DATA } from '../../data/globalData';
 
 // ─── Animation Variants ───────────────────────────────────────────────────────
 
@@ -19,20 +20,6 @@ interface Benefit {
 
 // ─── Sub-Components ───────────────────────────────────────────────────────────
 
-/** Small animated globe orb used inside badge and card icon */
-const GlobeOrb = ({ size, rotate }: { size: string; rotate?: string }) => (
-  <div
-    className={`${size} overflow-hidden relative shadow-globe-badge z-[5] shrink-0 rounded-[34.5rem]
-      bg-[linear-gradient(rgb(107,134,255)_0%,rgb(0,123,255)_48.4832%,rgb(0,47,255)_100%)]
-      ${rotate ?? ''}`}
-  >
-    <div className="absolute left-[-20px] right-[-14px] bottom-[-13px] aspect-[1.15385/1]">
-      <div className="absolute inset-0">
-        <img src={LOGO_BLUR_IMG} className="block size-full object-cover overflow-clip" alt="" />
-      </div>
-    </div>
-  </div>
-);
 
 /** Noise texture overlay — reused inside cards and CTA */
 const NoiseOverlay = ({ opacity = 'opacity-[0.1]', className = '' }: { opacity?: string; className?: string }) => (
@@ -56,14 +43,7 @@ const SectionHeader = () => (
         after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[#222222] after:content-[''] after:rounded-[62.4375rem]"
     >
       {/* Small globe */}
-      <div className="aspect-square overflow-hidden relative w-[18px] z-[5] shrink-0 rounded-[12.435rem] shadow-globe-badge
-        bg-[linear-gradient(rgb(107,134,255)_0%,rgb(0,123,255)_48.4832%,rgb(0,47,255)_100%)]">
-        <div className="absolute left-[-9px] right-[-7px] bottom-[-8px] aspect-[1.15385/1]">
-          <div className="absolute inset-0">
-            <img src={LOGO_BLUR_IMG} className="block size-full object-cover overflow-clip" alt="" />
-          </div>
-        </div>
-      </div>
+      <Globe variant="badge" />
 
       {/* Label */}
       <div className="items-center flex size-min justify-center relative gap-[3px] shrink-0">
@@ -106,15 +86,8 @@ const BenefitCard = ({ benefit }: { benefit: Benefit }) => (
           after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[rgb(54,54,54)] after:content-[''] after:rounded-2xl
           bg-[linear-gradient(211.476deg,rgb(0,0,0)_2.3%,rgb(0,36,66)_41.6%,rgb(4,12,122)_57.4%,rgb(68,13,140)_76.5%,rgba(23,23,23,0.95)_100%)]"
       >
-        <div className="relative w-12 h-12 rotate-[76.0644deg] shrink-0">
-          <div className="size-full overflow-hidden relative shadow-globe-card rounded-[34.5rem]
-            bg-[linear-gradient(rgb(107,134,255)_0%,rgb(0,123,255)_48.4832%,rgb(0,47,255)_100%)]">
-            <div className="absolute left-[-20px] right-[-14px] bottom-[-13px] aspect-[1.15385/1]">
-              <div className="absolute inset-0">
-                <img src={LOGO_BLUR_IMG} className="block size-full object-cover overflow-clip" alt="" />
-              </div>
-            </div>
-          </div>
+        <div className="relative rotate-[76.0644deg] shrink-0">
+          <Globe />
         </div>
       </div>
 

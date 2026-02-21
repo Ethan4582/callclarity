@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Globe from "../Globe";
 import {
-  PRICING_ORB_IMG,
   PRICING_BADGE_TEXT,
   PRICING_HEADING,
   PRICING_SUBTITLE,
@@ -67,29 +67,6 @@ const ArrowForwardIcon = () => (
 );
 
 
-const OrbIcon = ({ size = 24 }: { size?: number }) => (
-  <div
-    style={{
-      width: size,
-      height: size,
-      borderRadius: "50%",
-      overflow: "hidden",
-      flexShrink: 0,
-    }}
-  >
-    <img
-      src={PRICING_ORB_IMG}
-      alt=""
-      className="object-cover"
-      style={{
-        width: "100%",
-        height: "100%",
-        transform: "scale(3.35)",
-        transformOrigin: "center center",
-      }}
-    />
-  </div>
-);
 
 const FeatureItem = ({ text }: { text: string }) => (
   <li className="flex items-start gap-2.5 text-[13px] text-white font-medium">
@@ -119,7 +96,7 @@ const PricingCard = ({
 
         <div className="mb-4 relative z-10">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#1a1a1f] border border-white/10 mb-3">
-            <OrbIcon size={20} />
+            <Globe variant="badge" size="w-5 h-5" degrees={40} duration={5} />
             <span className="text-xs font-medium text-white font-inter">
               {plan.name}
             </span>
@@ -159,7 +136,7 @@ const PricingCard = ({
     <div className="group relative flex flex-col p-5 rounded-2xl bg-[#0a0a0a] border border-[#1f1f1f] transition-all duration-300 h-full">
       <div className="mb-4">
         <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#161616] border border-white/5 mb-3">
-          <OrbIcon size={20} />
+          <Globe variant="badge" size="w-5 h-5" degrees={40} duration={5} />
           <span className="text-xs font-medium text-gray-200 font-inter">
             {plan.name}
           </span>
@@ -207,7 +184,7 @@ const PricingPlans = () => {
           viewport={{ once: true }}
           className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#121212] border border-white/10 mb-3"
         >
-          <OrbIcon size={18} />
+          <Globe variant="badge" degrees={40} duration={5} />
           <span className="text-16px font-medium text-gray-300 font-inter">
             {PRICING_BADGE_TEXT}
           </span>
@@ -246,8 +223,8 @@ const PricingPlans = () => {
           <button
             onClick={() => setIsYearly(false)}
             className={`px-5 py-1.5 rounded-full text-xs font-medium transition-all duration-300 cursor-pointer font-inter ${!isYearly
-                ? "text-white btn-gradient shadow-lg relative z-10"
-                : "text-gray-400 hover:text-white"
+              ? "text-white btn-gradient shadow-lg relative z-10"
+              : "text-gray-400 hover:text-white"
               }`}
           >
             Monthly
@@ -255,8 +232,8 @@ const PricingPlans = () => {
           <button
             onClick={() => setIsYearly(true)}
             className={`px-5 py-1.5 rounded-full text-xs font-medium transition-all duration-300 cursor-pointer font-inter ${isYearly
-                ? "text-white btn-gradient shadow-lg relative z-10"
-                : "text-gray-400 hover:text-white"
+              ? "text-white btn-gradient shadow-lg relative z-10"
+              : "text-gray-400 hover:text-white"
               }`}
           >
             Yearly
