@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CallClarity — AI Analysis Platform for Customer Support Templete
+
+![CallClarity Preview](public/assets/hero.png)
+
+AI that reviews all support conversations, checks SOP compliance, flags risks, and automates QA.
+
+**Tech Stack:** Next.js • React • Tailwind CSS • Framer Motion • TypeScript
+
+⚠️ **IMPORTANT NOTICE:** This project is **NOT** a template for sale. It is completely free and open-source. Please ensure you provide proper credit to the original creators and developers when using or sharing this codebase. 
+
+## Key Features
+
+- **SOP Adherence:** Automatically verify if agents are following standard operating procedures.
+- **Risk Detection:** Identify compliance risks, missed disclosures, and risky statements in real-time.
+- **100% QA Coverage:** Eliminate manual sampling by reviewing every single interaction.
+- **Agent Coaching:** Get data-driven insights to coach agents and improve performance.
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+## Credits
 
-To learn more about Next.js, take a look at the following resources:
+**Original Design Inspiration:** Created by [@ItsPeterDesign](https://x.com/ItsPeterDesign)  
+**Inspired by:** [Chatframe Template](https://www.framer.com/marketplace/templates/chatframe/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is a custom Next.js implementation developed to provide a high-performance, accessible version of the CallClarity landing page.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Developer
 
-## Deploy on Vercel
+**Developed by:** [@Ethan4582](https://github.com/Ethan4582)  
+**Contact:** [@SinghAshir65848](https://x.com/SinghAshir65848)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ☕ Support the Creator
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you find this project useful, consider supporting us!  
+Your contribution helps in the development and maintenance of high-quality open-source projects.
+
+[![Buy Me a Coffee](public/assets/coffee.png)](https://buymeacoffee.com/ashirwad05) [Buy Me a Coffee](https://buymeacoffee.com/ashirwad05)
+
+## License
+
+This project is open-source. Please credit the developers and the original designer when using this work.
+
+---
+*Empowering support teams with clarity through AI.*
