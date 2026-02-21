@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-// ─── Logo Components ──────────────────────────────────────────────────────────
+
 
 const LogoAirLab = () => (
    <div className="flex items-center gap-1 opacity-70">
@@ -57,7 +57,7 @@ const LogoAventra = () => (
 const baseLogos = [LogoAirLab, LogoLumean, LogoCraftnet, LogoAventra]
 const logoList = [...baseLogos, ...baseLogos]
 
-// ─── Marquee Component ────────────────────────────────────────────────────────
+
 
 const Marquee = () => {
    return (
@@ -67,11 +67,11 @@ const Marquee = () => {
          </p>
 
          <div className="relative w-full overflow-hidden">
-            {/* Gradient Fades */}
+          
             <div className="absolute left-0 top-0 bottom-0 w-[120px] z-[2] pointer-events-none bg-gradient-to-r from-[#111] via-[#111]/80 to-transparent" />
             <div className="absolute right-0 top-0 bottom-0 w-[120px] z-[2] pointer-events-none bg-gradient-to-l from-[#111] via-[#111]/80 to-transparent" />
 
-            {/* Scrolling Track */}
+          
             <div className="flex">
                <div className="flex gap-10 md:gap-20 animate-marquee-infinite whitespace-nowrap">
                   {[...logoList, ...logoList].map((Logo, i) => (

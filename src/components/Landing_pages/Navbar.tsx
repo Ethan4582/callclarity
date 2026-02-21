@@ -4,7 +4,7 @@ import { NAV_LINKS } from '../../data/globalData';
 import { LOGO_BLUR_IMG } from '../../data/globalData';
 import Globe from '../Globe';
 
-// ─── Logo ─────────────────────────────────────────────────────────────────────
+
 
 const NavLogo = () => (
   <a href="/" aria-label="Home" className="logo-container">
@@ -17,7 +17,6 @@ const NavLogo = () => (
   </a>
 );
 
-// ─── Desktop nav links ────────────────────────────────────────────────────────
 
 const DesktopLinks = () => (
   <div className="items-center hidden md:flex size-min justify-center overflow-hidden relative gap-7 shrink-0">
@@ -33,7 +32,7 @@ const DesktopLinks = () => (
   </div>
 );
 
-// ─── Hamburger icon ───────────────────────────────────────────────────────────
+
 
 const HamburgerIcon = ({ open, onClick }: { open: boolean; onClick: () => void }) => (
   <button
@@ -42,10 +41,10 @@ const HamburgerIcon = ({ open, onClick }: { open: boolean; onClick: () => void }
     className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] shrink-0 focus:outline-none"
   >
     {open ? (
-      /* X icon */
+    
       <span className="text-white text-2xl leading-none font-light select-none">✕</span>
     ) : (
-      /* Three bars */
+ 
       <>
         <span className="w-5 h-[1.5px] bg-white rounded-full block" />
         <span className="w-5 h-[1.5px] bg-white rounded-full block" />
@@ -55,14 +54,14 @@ const HamburgerIcon = ({ open, onClick }: { open: boolean; onClick: () => void }
   </button>
 );
 
-// ─── Mobile dropdown ──────────────────────────────────────────────────────────
+
 
 const MobileMenu = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
   if (!open) return null;
 
   return (
     <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-sm flex flex-col px-6 pt-5 pb-10 md:hidden">
-      {/* Top row: logo left + close right */}
+    
       <div className="flex items-center justify-between mb-10">
         <NavLogo />
         <button
@@ -74,7 +73,7 @@ const MobileMenu = ({ open, onClose }: { open: boolean; onClose: () => void }) =
         </button>
       </div>
 
-      {/* Nav links — left-aligned, large */}
+   
       <nav className="flex flex-col gap-[0px]">
         {NAV_LINKS.map(({ label, href }) => (
           <a
@@ -89,7 +88,7 @@ const MobileMenu = ({ open, onClose }: { open: boolean; onClose: () => void }) =
         ))}
       </nav>
 
-      {/* CTA at the bottom */}
+    
       <div className="mt-auto">
         <a
           href="#"
@@ -103,29 +102,28 @@ const MobileMenu = ({ open, onClose }: { open: boolean; onClose: () => void }) =
   );
 };
 
-// ─── Main Navbar ──────────────────────────────────────────────────────────────
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div>
-      {/* Fixed bar */}
+  
       <div className="fixed left-0 top-0 right-0 z-50 shrink-0 order-first">
         <nav aria-label="Main Navigation" className="nav-container">
           <div aria-label="Content" className="nav-content">
 
-            {/* Logo — always visible */}
+         
             <div className="items-center flex size-min justify-center relative gap-[10px] shrink-0">
               <div className="relative shrink-0">
                 <NavLogo />
               </div>
             </div>
 
-            {/* Desktop: center links */}
             <DesktopLinks />
 
-            {/* Desktop: Sign In CTA */}
+       
             <div className="relative shrink-0 hidden md:block">
               <a href="/" aria-label="Sign In" className="btn-signin">
                 <div className="flex flex-col justify-start relative z-10 shrink-0">
@@ -134,13 +132,12 @@ const Navbar = () => {
               </a>
             </div>
 
-            {/* Mobile: hamburger trigger */}
+           
             <HamburgerIcon open={menuOpen} onClick={() => setMenuOpen((o) => !o)} />
           </div>
         </nav>
       </div>
 
-      {/* Mobile fullscreen menu */}
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>
   );

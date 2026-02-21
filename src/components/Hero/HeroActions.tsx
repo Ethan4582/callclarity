@@ -10,7 +10,7 @@ import {
 const HeroActions = () => {
    return (
       <button aria-label="CTA's" className="items-center flex flex-col md:flex-row h-min justify-start relative text-center w-full md:w-auto bg-black/0 gap-4 md:gap-[10px] shrink-0">
-         {/* Primary CTA */}
+       
          <a
             href={HERO_CTA_PRIMARY_HREF}
             aria-label="Desktop/primary"
@@ -22,7 +22,7 @@ const HeroActions = () => {
             </div>
          </a>
 
-         {/* Secondary CTA */}
+      
          <a
             href={HERO_CTA_SECONDARY_HREF}
             aria-label="Desktop/secondery"

@@ -4,7 +4,7 @@ import { FEATURE_BADGE_TEXT, FEATURE_HEADING, LOGO_BLUR_IMG } from '../../data/g
 const FeatureHeader = () => {
    return (
       <header className="flex flex-col items-center justify-center relative w-full gap-4">
-         {/* Badge */}
+       
          <div className="relative">
             <div
                className="flex items-center justify-center bg-[#171717] gap-[5px] pt-1.5 pr-3 pb-1.5 pl-1.5 rounded-full relative after:absolute after:inset-0 after:border after:border-[#222222] after:rounded-full after:pointer-events-none"
@@ -22,7 +22,7 @@ const FeatureHeader = () => {
             </div>
          </div>
 
-         {/* Title */}
+       
          <div className="flex flex-col items-center justify-center w-full gap-4">
             <h2 className="text-center text-white text-3xl md:text-[48px] tracking-tight md:tracking-[-2.88px] leading-tight md:leading-[52.8px] max-w-[590px] font-inter px-4 md:px-0">
                {FEATURE_HEADING}

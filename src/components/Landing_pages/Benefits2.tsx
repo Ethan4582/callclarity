@@ -4,48 +4,45 @@ import { motion } from 'framer-motion';
 import Globe from '../Globe';
 import { NOISE_TEXTURE, ARROW_RIGHT_ICON, BENEFITS_DATA } from '../../data/globalData';
 
-// ─── Animation Variants ───────────────────────────────────────────────────────
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
 };
 
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 interface Benefit {
   title: string;
   description: string;
 }
 
-// ─── Sub-Components ───────────────────────────────────────────────────────────
 
 
-/** Noise texture overlay — reused inside cards and CTA */
 const NoiseOverlay = ({ opacity = 'opacity-[0.1]', className = '' }: { opacity?: string; className?: string }) => (
   <div className={`absolute inset-0 pointer-events-none z-[1] ${opacity} ${className}`}>
     <img src={NOISE_TEXTURE} className="block size-full overflow-clip" alt="" />
   </div>
 );
 
-// ─── Section Header ───────────────────────────────────────────────────────────
+
 
 const SectionHeader = () => (
   <header
     aria-label="Header"
     className="items-center flex flex-col h-min justify-center relative w-full gap-[16px]"
   >
-    {/* Badge */}
+  
     <motion.div
       variants={fadeInUp}
       aria-label="Badge"
       className="items-center flex size-min justify-center relative bg-[#171717] gap-[5px] pt-[6px] pr-3 pb-[6px] pl-[6px] rounded-[62.4375rem]
         after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[#222222] after:content-[''] after:rounded-[62.4375rem]"
     >
-      {/* Small globe */}
+     
       <Globe variant="badge" />
 
-      {/* Label */}
+    
       <div className="items-center flex size-min justify-center relative gap-[3px] shrink-0">
         <p className="text-white/90 text-[16px] tracking-[-0.8px] leading-[14.4px] font-inter whitespace-pre h-[14px]">
           Simple Benefits
@@ -53,7 +50,7 @@ const SectionHeader = () => (
       </div>
     </motion.div>
 
-    {/* Heading */}
+    
     <div className="items-center flex flex-col h-min justify-center relative w-full gap-[16px] shrink-0">
       <div className="flex flex-col justify-start relative whitespace-pre-wrap w-full max-w-full md:max-w-[80%] shrink-0">
         <motion.h2
@@ -67,7 +64,6 @@ const SectionHeader = () => (
   </header>
 );
 
-// ─── Benefit Card ─────────────────────────────────────────────────────────────
 
 const BenefitCard = ({ benefit }: { benefit: Benefit }) => (
   <motion.div variants={fadeInUp} className="self-start justify-self-start relative w-full">
@@ -79,7 +75,7 @@ const BenefitCard = ({ benefit }: { benefit: Benefit }) => (
     >
       <NoiseOverlay />
 
-      {/* Card icon — large rotated globe */}
+  
       <div
         aria-label="Icon"
         className="items-center flex size-min justify-center overflow-clip relative gap-[10px] p-[10px] shrink-0 rounded-2xl
@@ -91,7 +87,7 @@ const BenefitCard = ({ benefit }: { benefit: Benefit }) => (
         </div>
       </div>
 
-      {/* Card text */}
+      
       <div className="items-center flex flex-col h-min justify-center overflow-clip relative w-full gap-[8px] shrink-0">
         <div className="flex flex-col justify-start relative whitespace-pre-wrap w-full shrink-0">
           <h3 className="text-left text-white text-[24px] tracking-[-0.48px] leading-[31.2px] font-inter">
@@ -108,7 +104,7 @@ const BenefitCard = ({ benefit }: { benefit: Benefit }) => (
   </motion.div>
 );
 
-// ─── CTA Block ────────────────────────────────────────────────────────────────
+
 
 const CTABlock = () => (
   <motion.div
@@ -121,7 +117,7 @@ const CTABlock = () => (
         className="items-center flex h-min justify-center overflow-hidden relative w-full bg-[#0f0f0f] gap-[16px] p-2 rounded-[1.375rem]
           after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[#222222] after:content-[''] after:rounded-[1.375rem]"
       >
-        {/* Label */}
+       
         <div className="items-center flex flex-col grow h-min justify-center overflow-clip relative w-px basis-0 gap-[4px] pl-2 z-[1] shrink-0">
           <p className="text-left text-white text-[18px] tracking-[-0.9px] leading-[19.8px] font-inter w-full">
             Are you ready?
@@ -130,7 +126,7 @@ const CTABlock = () => (
 
         <NoiseOverlay opacity="opacity-[0.06]" className="top-[-319px] bottom-[-201px] left-[-2px] right-[-2px] inset-auto" />
 
-        {/* CTA button */}
+      
         <div className="relative shrink-0">
           <a
             href="#"
@@ -156,7 +152,6 @@ const CTABlock = () => (
   </motion.div>
 );
 
-// ─── Main Component ───────────────────────────────────────────────────────────
 
 const Benefits2 = () => (
   <div>
@@ -181,7 +176,7 @@ const Benefits2 = () => (
           aria-label="Grid+CTA"
           className="items-center flex flex-col h-min justify-center relative w-full gap-[44px] shrink-0"
         >
-          {/* Benefit cards grid */}
+        
           <div className="grid h-min justify-center relative w-full grid-cols-1 md:grid-cols-2 gap-[8px] shrink-0">
             {BENEFITS_DATA.map((benefit) => (
               <BenefitCard key={benefit.title} benefit={benefit} />

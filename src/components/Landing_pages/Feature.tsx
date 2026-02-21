@@ -19,7 +19,7 @@ const fadeWithDelay = (delay: number) => ({
 const Feature = () => {
   return (
     <section id="features" aria-label="Features" className="flex flex-col items-center justify-center relative w-full gap-[44px] p-5 py-16 md:p-[100px] overflow-hidden">
-      {/* Header Section */}
+  
       <motion.div
         variants={fadeInUp}
         initial="hidden"
@@ -30,9 +30,9 @@ const Feature = () => {
         <FeatureHeader />
       </motion.div>
 
-      {/* Grid + CTA Section */}
+    
       <div className="flex flex-col items-center justify-center w-full gap-[44px] max-w-[1000px] z-[1]">
-        {/* Feature Grid */}
+     
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-2 w-full">
           {FEATURE_CARDS.map((card: any, index: number) => (
             <motion.div
@@ -52,7 +52,7 @@ const Feature = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
+      
         <motion.div
           variants={fadeInUp}
           initial="hidden"

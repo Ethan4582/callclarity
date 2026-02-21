@@ -10,7 +10,7 @@ import {
   FAQ_CONTACT_HREF,
 } from '../../data/globalData';
 
-// ─── Animation Variants ───────────────────────────────────────────────────────
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -27,7 +27,6 @@ const fadeInRight = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
 };
 
-// ─── Plus / X Icon ────────────────────────────────────────────────────────────
 
 const PlusIcon = ({ open }: { open: boolean }) => (
   <div className="overflow-hidden relative w-5 h-5 shrink-0">
@@ -39,7 +38,6 @@ const PlusIcon = ({ open }: { open: boolean }) => (
   </div>
 );
 
-// ─── Noise Overlay ────────────────────────────────────────────────────────────
 
 const NoiseOverlay = () => (
   <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.1]">
@@ -47,7 +45,7 @@ const NoiseOverlay = () => (
   </div>
 );
 
-// ─── FAQ Item ─────────────────────────────────────────────────────────────────
+
 
 const FaqItem = ({ question, answer, index }: { question: string; answer: string; index: number }) => {
   const [open, setOpen] = useState(false);
@@ -71,7 +69,7 @@ const FaqItem = ({ question, answer, index }: { question: string; answer: string
         ].join(' ')}
         aria-expanded={open}
       >
-        {/* Question row */}
+      
         <div className="items-center flex h-min justify-between w-full gap-[10px] shrink-0">
           <p className="text-white text-[20px] tracking-[-0.8px] leading-[24px] font-inter text-left grow">
             {question}
@@ -79,7 +77,7 @@ const FaqItem = ({ question, answer, index }: { question: string; answer: string
           <PlusIcon open={open} />
         </div>
 
-        {/* Answer — animated */}
+      
         <AnimatePresence initial={false}>
           {open && (
             <motion.div
@@ -103,7 +101,7 @@ const FaqItem = ({ question, answer, index }: { question: string; answer: string
   );
 };
 
-// ─── Section Badge ────────────────────────────────────────────────────────────
+
 
 const SectionBadge = () => (
   <motion.div
@@ -128,7 +126,7 @@ const SectionBadge = () => (
   </motion.div>
 );
 
-// ─── Left Column ──────────────────────────────────────────────────────────────
+
 
 const LeftColumn = () => (
   <motion.div
@@ -138,7 +136,7 @@ const LeftColumn = () => (
     viewport={{ once: true }}
     className="items-start self-stretch flex flex-col justify-between relative w-full md:w-px md:basis-0 md:grow shrink-0 gap-10 md:gap-0"
   >
-    {/* Header */}
+
     <header className="items-start flex flex-col h-min justify-center relative w-full gap-[16px]">
       <SectionBadge />
       <div className="flex flex-col gap-[16px] w-full">
@@ -151,7 +149,7 @@ const LeftColumn = () => (
       </div>
     </header>
 
-    {/* CTA */}
+ 
     <div className="flex flex-col gap-[16px]">
       <p className="text-[rgb(146,146,146)] text-[16px] tracking-[-0.64px] leading-[19.2px] font-inter">
         Have more questions?
@@ -170,7 +168,7 @@ const LeftColumn = () => (
   </motion.div>
 );
 
-// ─── Right Column ─────────────────────────────────────────────────────────────
+
 
 const RightColumn = () => (
   <motion.div
@@ -186,7 +184,7 @@ const RightColumn = () => (
   </motion.div>
 );
 
-// ─── Main Component ───────────────────────────────────────────────────────────
+
 
 const Faq = () => (
   <div>

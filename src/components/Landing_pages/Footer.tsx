@@ -8,22 +8,20 @@ import {
   FOOTER_SOCIAL_LINKS,
 } from '../../data/globalData';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
+
 interface LinkItem {
   label: string;
   href: string;
 }
 
-// ─── Sub-Components ───────────────────────────────────────────────────────────
 
-/** Globe logo mark */
 const FooterLogo = () => (
   <a
     href="/"
     aria-label="CallClarity Home"
     className="items-center flex size-min justify-center overflow-hidden relative bg-white/[0.15] gap-[6.87px] pt-[6.87px] pr-[13.75px] pb-[6.87px] pl-[6.87px] rounded-[1.718125rem]"
   >
-    {/* Globe orb */}
+  
     <div
       className="aspect-square overflow-hidden relative w-[27px] z-[5] shrink-0 rounded-[0.859375rem]"
       style={{
@@ -39,14 +37,14 @@ const FooterLogo = () => (
       </div>
     </div>
 
-    {/* Brand name */}
+
     <p className="text-white/90 text-[17px] tracking-[-0.51px] leading-[17px] font-geist whitespace-pre">
       <span className="font-medium">CallClarity</span>
     </p>
   </a>
 );
 
-/** Primary CTA — full-width on mobile, auto-width on desktop */
+
 const FooterCTA = ({ fullWidth }: { fullWidth?: boolean }) => (
   <a
     href="#"
@@ -65,7 +63,7 @@ const FooterCTA = ({ fullWidth }: { fullWidth?: boolean }) => (
     <p className="text-white text-[16px] tracking-[-0.64px] leading-[19.2px] font-inter whitespace-pre z-[10] shrink-0">
       Book a Demo
     </p>
-    {/* Arrow icon box */}
+   
     <div className="aspect-square overflow-clip relative w-5 bg-white/10 shrink-0 rounded-md">
       <div className="aspect-square absolute w-[18px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="items-center flex size-full justify-center">
@@ -78,7 +76,7 @@ const FooterCTA = ({ fullWidth }: { fullWidth?: boolean }) => (
   </a>
 );
 
-/** A single footer link */
+
 const FooterLink = ({ label, href }: LinkItem) => (
   <a
     href={href}
@@ -90,7 +88,7 @@ const FooterLink = ({ label, href }: LinkItem) => (
   </a>
 );
 
-/** A titled column of footer links */
+
 const FooterLinkColumn = ({ title, links }: { title: string; links: LinkItem[] }) => (
   <div className="items-start flex flex-col h-min justify-start relative gap-[16px] shrink-0 w-full md:w-[165px]">
     <p className="text-white text-[20px] tracking-[-1px] leading-[20px] font-inter whitespace-pre">
@@ -106,7 +104,7 @@ const FooterLinkColumn = ({ title, links }: { title: string; links: LinkItem[] }
   </div>
 );
 
-/** Bottom legal bar */
+
 const FooterLegal = () => (
   <div
     className="items-start flex h-min justify-between relative w-full pt-5 pb-5 shrink-0
@@ -119,22 +117,20 @@ const FooterLegal = () => (
   </div>
 );
 
-// ─── Main Footer Component ────────────────────────────────────────────────────
 
 const Footer = () => (
   <div>
-    {/* Spacer */}
+   
     <div className="grow relative w-0 h-0" />
 
     <div aria-label="Footer" className="items-center flex flex-col h-min justify-center relative w-full gap-0 shrink-0" style={{ order: 1002 }}>
-      {/* Background gradient image */}
+  
       <div className="absolute h-[1350px] left-0 right-0 bottom-0 shrink-0 opacity-40">
         <div className="size-full overflow-hidden">
           <img src={FOOTER_GRADIENT_IMG} className="block size-full" alt="" />
         </div>
       </div>
 
-      {/* Footer body */}
       <div className="relative w-full z-[1] shrink-0">
         <footer
           aria-label="Desktop"
@@ -143,9 +139,9 @@ const Footer = () => (
           <div className="items-center flex flex-col h-min justify-start relative w-full gap-0 max-w-[1400px] shrink-0">
             <div className="items-center flex flex-col h-min justify-start relative w-full gap-[80px] shrink-0">
 
-              {/* ── MOBILE layout (stacked) ── */}
+            
               <div className="flex md:hidden flex-col w-full gap-[28px]">
-                {/* Brand block */}
+             
                 <div className="flex flex-col gap-[16px]">
                   <FooterLogo />
                   <p className="text-[rgb(146,146,146)] text-[16px] tracking-[-0.64px] leading-[19.2px] font-inter">
@@ -153,10 +149,10 @@ const Footer = () => (
                   </p>
                 </div>
 
-                {/* Full-width CTA */}
+               
                 <FooterCTA fullWidth />
 
-                {/* Link columns stacked vertically */}
+              
                 <div className="flex flex-col gap-[32px] w-full">
                   <FooterLinkColumn title="Navigation" links={FOOTER_NAV_LINKS} />
                   <FooterLinkColumn title="Pages" links={FOOTER_PAGE_LINKS} />
@@ -164,9 +160,9 @@ const Footer = () => (
                 </div>
               </div>
 
-              {/* ── DESKTOP layout (side-by-side) ── */}
+             
               <div className="hidden md:flex items-start h-min justify-start relative w-full gap-[100px] shrink-0">
-                {/* Left — brand + tagline + CTA */}
+              
                 <div className="items-start flex flex-col grow h-min justify-start relative w-px basis-0 gap-[24px] shrink-0">
                   <div className="items-start flex flex-col h-min justify-center relative w-full gap-[16px] shrink-0">
                     <FooterLogo />
@@ -179,7 +175,7 @@ const Footer = () => (
                   <FooterCTA />
                 </div>
 
-                {/* Right — link columns */}
+            
                 <div className="items-start flex grow h-min justify-end relative w-px basis-0 gap-[10px] shrink-0">
                   <FooterLinkColumn title="Navigation" links={FOOTER_NAV_LINKS} />
                   <FooterLinkColumn title="Pages" links={FOOTER_PAGE_LINKS} />
@@ -187,7 +183,7 @@ const Footer = () => (
                 </div>
               </div>
 
-              {/* Legal bar */}
+            
               <FooterLegal />
             </div>
           </div>

@@ -15,14 +15,14 @@ const HeroStartBadge = () => {
             aria-label="Variant 2"
             className="items-center flex size-min justify-center overflow-clip relative gap-[6px] py-[6px] pr-3 pl-[6px] rounded-full gradient-badge-bg border-overlay-dark"
          >
-            {/* Noise */}
+        
             <div aria-label="noise" className="absolute h-[34px] left-0 top-[calc(50%-17px)] right-0 shrink-0 opacity-[0.32] rounded-[19.6875rem]">
                <div className="noise-overlay">
                   <img src={NOISE_TEXTURE} alt="" />
                </div>
             </div>
 
-            {/* Profile Avatars */}
+           
             <div aria-label="Profiles" className="relative w-[60px] h-6 shrink-0">
                {PROFILES.map((p, i) => (
                   <div key={i} className={`overflow-hidden absolute hero-profile-shadow hero-profile-border ${p.pos}`}>
@@ -31,7 +31,7 @@ const HeroStartBadge = () => {
                ))}
             </div>
 
-            {/* Badge Text */}
+           
             <p className="hero-badge-text relative whitespace-pre h-[14px] shrink-0">{HERO_BADGE_TEXT}</p>
          </div>
       </div>

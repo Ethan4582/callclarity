@@ -10,7 +10,7 @@ import {
   NOISE_TEXTURE,
 } from '../../data/globalData';
 
-// ─── Animation Variants ───────────────────────────────────────────────────────
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -27,7 +27,7 @@ const fadeInRight = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 };
 
-// ─── Sub-Components ───────────────────────────────────────────────────────────
+
 
 const StarRating = () => (
   <div className="items-center flex justify-center overflow-clip relative text-left w-min h-4 gap-[8px] shrink-0">
@@ -53,17 +53,17 @@ const StarRating = () => (
 const TestimonialCard = ({ data }: { data: typeof TESTIMONIALS[0] }) => (
   <div className="relative text-left w-[300px] md:w-[380px] lg:w-[442px] h-[207px] z-[10] flex-shrink-0">
     <div className="items-start flex flex-col h-full justify-start overflow-clip relative text-left w-full backdrop-blur-[5px] bg-[#262626]/44 gap-[12px] p-6 rounded-3xl after:border after:size-full after:pointer-events-none after:absolute after:text-left after:left-0 after:top-0 after:border-[#262626]/44 after:content-[''] after:rounded-3xl">
-      {/* Decorative quote mark */}
+     
       <div className="flex flex-col justify-start absolute text-left whitespace-pre top-[10px] right-[10px] shrink-0 pointer-events-none">
         <p className="text-white/5 text-[120px] leading-[120px] font-lily">"</p>
       </div>
 
-      {/* Noise texture overlay */}
+     
       <div className="absolute inset-0 z-[1] opacity-[0.1] pointer-events-none">
         <img src={NOISE_TEXTURE} className="block size-full overflow-clip aspect-square" alt="" />
       </div>
 
-      {/* Stars + Quote */}
+    
       <div className="items-start flex flex-col h-min justify-center overflow-clip relative text-left w-full gap-[16px] shrink-0 z-10">
         <StarRating />
         <p className="text-white text-[14px] md:text-[16px] tracking-[-0.64px] leading-[19.2px] font-inter">
@@ -71,7 +71,7 @@ const TestimonialCard = ({ data }: { data: typeof TESTIMONIALS[0] }) => (
         </p>
       </div>
 
-      {/* Profile */}
+     
       <div className="items-center flex h-min justify-center overflow-clip relative text-left w-full gap-[8px] pt-4 shrink-0 z-10 border-t border-white/10 mt-auto">
         <div className="aspect-square overflow-clip relative w-[38px] shrink-0 rounded-lg">
           <img src={data.profileImg} className="block size-full object-cover rounded-lg" alt={data.name} />
@@ -92,7 +92,7 @@ const TestimonialCard = ({ data }: { data: typeof TESTIMONIALS[0] }) => (
   </div>
 );
 
-// ─── Marquee Row ──────────────────────────────────────────────────────────────
+
 
 const MarqueeRow = ({ reverse, speed }: { reverse?: boolean; speed: number }) => (
   <div className="marquee-wrapper">
@@ -109,7 +109,7 @@ const MarqueeRow = ({ reverse, speed }: { reverse?: boolean; speed: number }) =>
   </div>
 );
 
-// ─── Main Component ───────────────────────────────────────────────────────────
+
 
 const Testimonial = () => (
   <div>
@@ -117,9 +117,9 @@ const Testimonial = () => (
       aria-label="Testimonials"
       className="items-center flex flex-col h-min justify-center relative w-full bg-[#131314]/44 gap-[44px] pt-[100px] pb-11 shrink-0 rounded-[5rem] overflow-hidden"
     >
-      {/* Header */}
+    
       <div className="items-center flex flex-col h-min justify-center relative w-full max-w-[1000px] z-[1] shrink-0 px-6 gap-[16px]">
-        {/* Badge — fades up */}
+       
         <motion.div
           variants={fadeInUp}
           initial="hidden"
@@ -143,7 +143,7 @@ const Testimonial = () => (
           </div>
         </motion.div>
 
-        {/* Heading — fades up with slight delay */}
+      
         <motion.h2
           variants={fadeInUp}
           initial="hidden"
@@ -156,9 +156,8 @@ const Testimonial = () => (
         </motion.h2>
       </div>
 
-      {/* Cards */}
       <div className="w-full">
-        {/* Mobile — vertical stack, fades up per card */}
+       
         <div className="flex flex-col items-center gap-5 md:hidden px-4 w-full">
           {TESTIMONIALS.map((t, i) => (
             <motion.div
@@ -172,20 +171,20 @@ const Testimonial = () => (
             >
               <div className="relative text-left w-full h-auto z-[10]">
                 <div className="items-start flex flex-col h-min justify-start overflow-clip relative text-left w-full backdrop-blur-[5px] bg-[#262626]/44 gap-[12px] p-5 rounded-3xl after:border after:size-full after:pointer-events-none after:absolute after:text-left after:left-0 after:top-0 after:border-[#262626]/44 after:content-[''] after:rounded-3xl">
-                  {/* Decorative quote mark */}
+               
                   <div className="flex flex-col justify-start absolute whitespace-pre top-[10px] right-[10px] shrink-0 pointer-events-none">
                     <p className="text-white/5 text-[120px] leading-[120px] font-lily">"</p>
                   </div>
-                  {/* Noise */}
+               
                   <div className="absolute inset-0 z-[1] opacity-[0.1] pointer-events-none">
                     <img src={NOISE_TEXTURE} className="block size-full overflow-clip" alt="" />
                   </div>
-                  {/* Stars + text */}
+               
                   <div className="items-start flex flex-col h-min justify-center relative w-full gap-[12px] shrink-0 z-10">
                     <StarRating />
                     <p className="text-white text-[15px] tracking-[-0.5px] leading-[1.35] font-inter">{t.text}</p>
                   </div>
-                  {/* Profile */}
+                 
                   <div className="items-center flex h-min justify-start relative w-full gap-[8px] pt-4 shrink-0 z-10 border-t border-white/10">
                     <div className="aspect-square overflow-clip relative w-[38px] shrink-0 rounded-lg">
                       <img src={t.profileImg} className="block size-full object-cover rounded-lg" alt={t.name} />
@@ -206,7 +205,7 @@ const Testimonial = () => (
           ))}
         </div>
 
-        {/* Desktop — infinite marquee, 2 rows — fades in as a block */}
+      
         <motion.div
           variants={fadeInUp}
           initial="hidden"

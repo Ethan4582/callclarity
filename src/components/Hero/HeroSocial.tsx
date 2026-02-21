@@ -6,10 +6,9 @@ const TOTAL_STARS = 5
 const HeroSocial = () => {
    return (
       <div aria-label="SocialProof" className="items-center md:items-start flex flex-col size-min justify-start relative gap-1 shrink-0 opacity-95">
-         {/* Label */}
+        
          <p className="hero-social-label whitespace-pre shrink-0">{HERO_SOCIAL_LABEL}</p>
 
-         {/* Stars + Rating */}
          <div className="items-center flex size-min justify-start relative gap-2 shrink-0">
             <div className="items-center flex size-min justify-center overflow-hidden relative gap-1 shrink-0">
                {Array.from({ length: TOTAL_STARS }).map((_, i) => (

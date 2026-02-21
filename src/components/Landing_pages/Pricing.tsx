@@ -85,13 +85,13 @@ const PricingCard = ({
   const price = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
   const periodLabel = isYearly ? "Yearly Subscription" : plan.subscriptionLabel;
 
-  // Pro Plan Styling
+
   if (plan.isPro) {
     return (
       <div className="relative flex flex-col p-5 rounded-2xl bg-[#0f0f11] border border-blue-900/30 overflow-hidden shadow-2xl h-full">
-        {/* Blue background gradient */}
+      
         <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] opacity-70"></div>
-        {/* Bottom glow */}
+      
         <div className="absolute inset-x-0 bottom-0 h-48 pro-glow-bottom pointer-events-none" />
 
         <div className="mb-4 relative z-10">
@@ -111,7 +111,6 @@ const PricingCard = ({
           </p>
         </div>
 
-        {/* Blue gradient button for Pro */}
         <button className="relative z-10 w-full py-2.5 rounded-xl btn-gradient text-white font-medium hover:opacity-90 transition-all mb-5 flex items-center justify-center gap-1.5 text-sm cursor-pointer font-inter shadow-[0_0_20px_rgba(37,99,235,0.4)]">
           {plan.buttonText}
           <ArrowForwardIcon />
@@ -131,7 +130,7 @@ const PricingCard = ({
     );
   }
 
-  // Basic / Team Plan Styling
+
   return (
     <div className="group relative flex flex-col p-5 rounded-2xl bg-[#0a0a0a] border border-[#1f1f1f] transition-all duration-300 h-full">
       <div className="mb-4">
@@ -167,16 +166,16 @@ const PricingCard = ({
   );
 };
 
-/* ── Main Component ──────────────────────────────────────────────────── */
+
 
 const PricingPlans = () => {
   const [isYearly, setIsYearly] = useState(false);
 
   return (
     <section className="text-white font-inter w-full flex flex-col items-center px-4 py-8 sm:py-12">
-      {/* Header */}
+   
       <div className="w-full max-w-5xl mx-auto text-center">
-        {/* Badge */}
+      
         <motion.div
           variants={fadeInUp}
           initial="hidden"
@@ -190,7 +189,7 @@ const PricingPlans = () => {
           </span>
         </motion.div>
 
-        {/* Heading */}
+    
         <motion.h1
           variants={fadeInUp}
           initial="hidden"
@@ -201,7 +200,7 @@ const PricingPlans = () => {
           {PRICING_HEADING}
         </motion.h1>
 
-        {/* Subtitle */}
+    
         <motion.p
           variants={fadeInUp}
           initial="hidden"
@@ -212,7 +211,7 @@ const PricingPlans = () => {
           {PRICING_SUBTITLE}
         </motion.p>
 
-        {/* Monthly / Yearly Toggle */}
+     
         <motion.div
           variants={fadeInUp}
           initial="hidden"
@@ -241,7 +240,7 @@ const PricingPlans = () => {
         </motion.div>
       </div>
 
-      {/* Pricing Cards */}
+
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -256,7 +255,6 @@ const PricingPlans = () => {
         ))}
       </motion.div>
 
-      {/* Footer Question */}
       <motion.div
         variants={fadeInUp}
         initial="hidden"
