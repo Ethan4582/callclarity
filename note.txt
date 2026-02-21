@@ -25,3 +25,26 @@ features
 
 
 
+
+
+
+const NavLogo = () => (
+  <a href="/" aria-label="Home" className="logo-container">
+    <div aria-label="Globe" className="globe-icon">
+      <div className="absolute left-[-13px] right-[-9px] bottom-[-8px] aspect-[1.15385/1]">
+        <div className="absolute inset-0">
+          <img
+            src={LOGO_BLUR_IMG}
+            className="block size-full object-cover overflow-clip"
+            alt="Globe Blur"
+          />
+        </div>
+      </div>
+    </div>
+    <div className="flex flex-col justify-start relative shrink-0">
+      <p className="text-white/90 text-[17px] tracking-[-0.51px] leading-[17px] font-geist">
+        <span className="font-medium">CallClarity</span>
+      </p>
+    </div>
+  </a>
+);

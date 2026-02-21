@@ -32,7 +32,7 @@ const HeroIllustration = () => {
                {/* Top — AI Label */}
                <div aria-label="Top" className="items-center flex h-min justify-between overflow-hidden relative w-full shrink-0">
                   <div aria-label="Name+Globe" className="items-center flex size-min justify-center overflow-hidden relative bg-black/15 gap-[2px] pr-[13.75px] pl-[6.87px] rounded-[1.718125rem]">
-                     <Globe className='scale-60' duration={3} degrees={40} />
+                     <Globe className='scale-60' duration={3} degrees={270} />
                      <p className="hero-btn-text relative whitespace-pre shrink-0">{HERO_ILLUS_AI_LABEL}</p>
                   </div>
                </div>

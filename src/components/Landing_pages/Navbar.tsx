@@ -2,24 +2,15 @@
 import React, { useState } from 'react';
 import { NAV_LINKS } from '../../data/globalData';
 import { LOGO_BLUR_IMG } from '../../data/globalData';
+import Globe from '../Globe';
 
 // ─── Logo ─────────────────────────────────────────────────────────────────────
 
 const NavLogo = () => (
   <a href="/" aria-label="Home" className="logo-container">
-    <div aria-label="Globe" className="globe-icon">
-      <div className="absolute left-[-13px] right-[-9px] bottom-[-8px] aspect-[1.15385/1]">
-        <div className="absolute inset-0">
-          <img
-            src={LOGO_BLUR_IMG}
-            className="block size-full object-cover overflow-clip"
-            alt="Globe Blur"
-          />
-        </div>
-      </div>
-    </div>
+    <Globe variant="badge" degrees={40} duration={5} className="scale-140 " />
     <div className="flex flex-col justify-start relative shrink-0">
-      <p className="text-white/90 text-[17px] tracking-[-0.51px] leading-[17px] font-geist">
+      <p className="text-white/90 pl-2text-[17px] tracking-[-0.51px] leading-[17px] font-geist">
         <span className="font-medium">CallClarity</span>
       </p>
     </div>
