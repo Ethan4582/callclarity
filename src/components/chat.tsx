@@ -18,12 +18,12 @@ import Globe from './Globe'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 }
 
 const fadeWithDelay = (delay: number) => ({
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut", delay } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const, delay } },
 })
 
 const Chat = () => {
@@ -37,7 +37,7 @@ const Chat = () => {
           aria-label="Content"
           className="items-center flex flex-col grow h-min justify-center relative w-full md:w-px md:basis-0 gap-[30px] md:gap-[55px] max-w-[1000px] z-[1] shrink-[0]"
         >
-        
+
           <motion.header
             variants={fadeInUp}
             initial="hidden"
@@ -127,7 +127,7 @@ const Chat = () => {
                             transition={{
                               duration: 3,
                               repeat: Infinity,
-                              ease: "easeInOut",
+                              ease: "easeInOut" as const,
                             }}
                           >
                             <Globe degrees={320} duration={2} scale={3} />
@@ -152,7 +152,7 @@ const Chat = () => {
                           aria-label="Chat"
                           className="items-center flex flex-col h-min justify-center overflow-hidden relative w-full bg-[#0f0f0f] shadow-lg gap-[45px] p-[7.55px] shrink-0 rounded-[1.2575rem] after:border after:size-full after:pointer-events-none after:absolute after:left-0 after:top-0 after:border-[#0a0a0a] after:content-[''] after:rounded-[1.2575rem]"
                         >
-                          
+
                           <div className="items-center flex h-min justify-start overflow-hidden relative w-full bg-black/15 p-[5.03px] z-[3] shrink-0 rounded-[0.78625rem]">
                             <div className="items-center flex grow h-min justify-start overflow-x-auto relative w-full gap-[14px] shrink-[0] scrollbar-hide">
                               <div className="items-center flex min-w-max justify-center overflow-hidden relative gap-[2.41px] shrink-0">
@@ -180,7 +180,7 @@ const Chat = () => {
                             </div>
                             <div className="items-center flex h-min justify-between overflow-hidden relative w-full shrink-0 pr-2">
                               <div className="items-center flex size-min justify-center overflow-hidden relative gap-[4.82px] shrink-0">
-                               
+
                                 {CHAT_ACTION_ICONS.map((path, i) => (
                                   <div
                                     key={i}
@@ -193,7 +193,7 @@ const Chat = () => {
                                 ))}
                               </div>
                               <div className="items-center flex size-min justify-center overflow-hidden relative gap-[4.82px] shrink-0">
-                             
+
                                 <div className="items-center flex flex-col size-min justify-center overflow-hidden relative bg-[#0a0a0a]/55 p-[7.85px] shrink-0 rounded-full">
                                   <svg viewBox="0 0 18 18" overflow="visible" className="w-[18px] h-[18px] fill-white opacity-40">
                                     <path d={CHAT_MIC_ICON} />
@@ -208,7 +208,7 @@ const Chat = () => {
                             </div>
                           </div>
 
-                      
+
                           <div aria-label="noise" className="absolute -inset-0.5 pointer-events-none z-[1] opacity-5">
                             <img src="https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2Fec5a86420a6baa2fa0ca5c8585412548d70651c1.png?width=2000&height=2000" className="block size-full object-cover" alt="" />
                           </div>
@@ -227,7 +227,7 @@ const Chat = () => {
                   >
                     <div aria-label="Content" className="items-center flex flex-col md:flex-row grow h-min justify-between relative w-full md:w-px md:basis-0 max-w-[1000px] gap-4 md:gap-0 shrink-0">
 
-                 
+
                       <div className="relative shrink-0 w-full md:w-auto flex justify-center md:justify-start">
                         <a href="/" aria-label="Variant 1" className="items-center flex size-min justify-center overflow-hidden relative bg-[#5e5e5e]/15 text-[#0000ee] gap-[6.87px] p-[6.87px] rounded-full hover:opacity-80 transition-opacity">
                           <div aria-label="Globe" className="aspect-square overflow-hidden relative w-[27px] shadow-globe-testimonial bg-globe-gradient z-[5] shrink-0 rounded-full">
@@ -243,7 +243,7 @@ const Chat = () => {
                         </a>
                       </div>
 
-                    
+
                       <div aria-label="CTAs" className="items-center flex flex-col sm:flex-row grow h-min justify-center md:justify-end relative w-full md:w-px md:basis-0 gap-[10px] shrink-0">
                         {CHAT_NAV_LINKS.map((link, idx) => (
                           <div key={idx} className="relative shrink-0 w-full sm:w-auto">

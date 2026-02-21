@@ -12,12 +12,12 @@ import HeroIllustration from './HeroIllustration'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 }
 
 const fadeInRight = {
   hidden: { opacity: 0, x: 40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 }
 
 const Hero = () => {
@@ -75,7 +75,7 @@ const Hero = () => {
               </div>
             </div>
 
-                        <motion.div
+            <motion.div
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"

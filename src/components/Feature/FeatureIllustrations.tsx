@@ -373,7 +373,7 @@ export const SiriIllustration = () => (
          transition={{
             duration: 3,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "easeInOut" as const,
          }}
       >
          <div className="absolute w-[180px] h-[180px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full pointer-events-none flex items-center justify-center">

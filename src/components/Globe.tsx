@@ -52,7 +52,7 @@ const Globe: React.FC<GlobeProps> = ({
             transition={{
                duration: duration,
                repeat: Infinity,
-               ease: "easeInOut",
+               ease: "easeInOut" as const,
             }}
             className={`size-full overflow-hidden relative ${shadowClass} ${roundedClass}
           bg-[linear-gradient(rgb(107,134,255)_0%,rgb(0,123,255)_48.4832%,rgb(0,47,255)_100%)]`}

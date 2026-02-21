@@ -8,18 +8,18 @@ import { motion } from 'framer-motion';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 };
 
 const fadeWithDelay = (delay: number) => ({
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut", delay } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const, delay } },
 });
 
 const Feature = () => {
   return (
     <section id="features" aria-label="Features" className="flex flex-col items-center justify-center relative w-full gap-[44px] p-5 py-16 md:p-[100px] overflow-hidden">
-  
+
       <motion.div
         variants={fadeInUp}
         initial="hidden"
@@ -30,9 +30,9 @@ const Feature = () => {
         <FeatureHeader />
       </motion.div>
 
-    
+
       <div className="flex flex-col items-center justify-center w-full gap-[44px] max-w-[1000px] z-[1]">
-     
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-2 w-full">
           {FEATURE_CARDS.map((card: any, index: number) => (
             <motion.div
@@ -52,7 +52,7 @@ const Feature = () => {
           ))}
         </div>
 
-      
+
         <motion.div
           variants={fadeInUp}
           initial="hidden"

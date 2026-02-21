@@ -40,16 +40,16 @@ const ChatListMockup = () => {
     { status: 'white', time: '24m', gradient: false },
   ]
 
-  
+
   const scrollingItems = [...items, ...items]
 
   return (
     <div className="flex flex-col p-2.5 min-h-[358px] mt-11 w-full bg-black rounded-t-[3.4rem] overflow-hidden relative border-t border-[#1a1a1a]">
 
-   
+
       <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#1b1c61]/40 to-transparent z-[5] pointer-events-none" />
 
-   
+
       <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black via-black/90 to-transparent z-20 pointer-events-none" />
 
       <motion.div
@@ -110,7 +110,7 @@ const AppScreenMockup = () => {
   const chipsRow3 = [...chips.slice(1), ...chips, ...chips, ...chips]
   return (
     <div className="flex flex-col p-2.5 min-h-[358px] mt-11 w-full bg-black rounded-t-[3.4rem] overflow-hidden relative border-t border-[#1a1a1a]">
-     
+
       <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black via-black/80 to-transparent z-20 pointer-events-none" />
 
       <div className="absolute top-1/2 left-0 right-0 -translate-y-[65%] flex flex-col gap-3.5 z-10 w-full overflow-visible opacity-90">
@@ -150,7 +150,7 @@ const AppScreenMockup = () => {
         <span className="text-white text-[15px] font-medium tracking-tight">Callclarity</span>
       </div>
 
-     
+
       <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black via-black/90 to-transparent z-20 pointer-events-none" />
     </div>
   )
@@ -177,7 +177,7 @@ const VoiceChatMockup = () => (
       transition={{
         duration: 3,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
       }}
     >
       <div className="absolute w-[180px] h-[180px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full pointer-events-none flex items-center justify-center">
@@ -189,7 +189,7 @@ const VoiceChatMockup = () => (
 
 const MockupContainer = ({ children }: { children: React.ReactNode }) => (
   <div className="relative w-full max-w-[452px] h-[390px] shrink-0 flex items-end justify-center rounded-[2.3rem] overflow-hidden bg-[#141414]/80 px-10 border border-white/5 shadow-2xl">
-   
+
     <div className="absolute bottom-0 left-0 right-0 h-[70%] bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#1d2799]/40 via-[#0e1040]/10 to-transparent pointer-events-none z-0" />
     <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-[#101968]/50 to-transparent pointer-events-none z-0" />
     <div className="absolute inset-0 opacity-10 pointer-events-none z-0 mix-blend-overlay">
@@ -211,7 +211,7 @@ const Benefits = () => {
         className="flex flex-col items-center justify-center w-full max-w-[1000px] gap-12 md:gap-[100px] z-[1]"
       >
 
-    
+
         <motion.header
           variants={fadeInUp}
           className="flex flex-col items-center w-full gap-4 text-center"
@@ -225,12 +225,12 @@ const Benefits = () => {
           </h2>
         </motion.header>
 
-   
+
         <div className="flex flex-col items-center w-full gap-20 md:gap-[100px]">
           {NEW_BENEFITS_CARDS.map((card, index) => {
             const isEven = index % 2 !== 0;
 
-          
+
             const TextContent = (
               <motion.div variants={isEven ? fadeInLeft : fadeInRight} className="flex flex-col items-start justify-center gap-5 w-full md:max-w-md">
                 <div className="flex flex-wrap items-center gap-2.5">
@@ -254,7 +254,7 @@ const Benefits = () => {
               </motion.div>
             );
 
-       
+
             const MockupContent = (
               <motion.div variants={isEven ? fadeInRight : fadeInLeft} className="w-full flex justify-center md:max-w-[452px]">
                 <MockupContainer>

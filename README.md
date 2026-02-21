@@ -1,4 +1,4 @@
-# CallClarity — AI Analysis Platform for Customer Support Templete
+# CallClarity — AI Analysis Platform for Customer Support Template
 
 ![CallClarity Preview](public/assets/hero.png)
 

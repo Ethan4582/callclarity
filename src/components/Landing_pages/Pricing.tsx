@@ -21,7 +21,7 @@ const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
+    transition: { duration: 0.7, ease: "easeOut" as const },
   },
 };
 
@@ -89,9 +89,9 @@ const PricingCard = ({
   if (plan.isPro) {
     return (
       <div className="relative flex flex-col p-5 rounded-2xl bg-[#0f0f11] border border-blue-900/30 overflow-hidden shadow-2xl h-full">
-      
+
         <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] opacity-70"></div>
-      
+
         <div className="absolute inset-x-0 bottom-0 h-48 pro-glow-bottom pointer-events-none" />
 
         <div className="mb-4 relative z-10">
@@ -173,9 +173,9 @@ const PricingPlans = () => {
 
   return (
     <section className="text-white font-inter w-full flex flex-col items-center px-4 py-8 sm:py-12">
-   
+
       <div className="w-full max-w-5xl mx-auto text-center">
-      
+
         <motion.div
           variants={fadeInUp}
           initial="hidden"
@@ -189,7 +189,7 @@ const PricingPlans = () => {
           </span>
         </motion.div>
 
-    
+
         <motion.h1
           variants={fadeInUp}
           initial="hidden"
@@ -200,7 +200,7 @@ const PricingPlans = () => {
           {PRICING_HEADING}
         </motion.h1>
 
-    
+
         <motion.p
           variants={fadeInUp}
           initial="hidden"
@@ -211,7 +211,7 @@ const PricingPlans = () => {
           {PRICING_SUBTITLE}
         </motion.p>
 
-     
+
         <motion.div
           variants={fadeInUp}
           initial="hidden"
