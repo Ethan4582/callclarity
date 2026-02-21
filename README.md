@@ -2,13 +2,13 @@
 
 ![CallClarity Preview](public/assets/hero.png)
 
-(public/assets/features.png)
+![CallClarity Preview](public/assets/features.png)
 
-(public/assets/testmonial.png)
+![CallClarity Preview](public/assets/testmonial.png)
 
-(public/assets/pricing.png)
+![CallClarity Preview](public/assets/pricing.png)
 
-(public/assets/footer.png)
+![CallClarity Preview](public/assets/footer.png)
 
 
 
@@ -18,12 +18,6 @@ AI that reviews all support conversations, checks SOP compliance, flags risks, a
 
 ⚠️ **IMPORTANT NOTICE:** This project is **NOT** a template for sale. It is completely free and open-source. Please ensure you provide proper credit to the original creators and developers when using or sharing this codebase. 
 
-## Key Features
-
-- **SOP Adherence:** Automatically verify if agents are following standard operating procedures.
-- **Risk Detection:** Identify compliance risks, missed disclosures, and risky statements in real-time.
-- **100% QA Coverage:** Eliminate manual sampling by reviewing every single interaction.
-- **Agent Coaching:** Get data-driven insights to coach agents and improve performance.
 
 ## Getting Started
 
