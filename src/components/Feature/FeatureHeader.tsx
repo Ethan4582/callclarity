@@ -24,7 +24,7 @@ const FeatureHeader = () => {
 
          {/* Title */}
          <div className="flex flex-col items-center justify-center w-full gap-4">
-            <h2 className="text-center text-white text-[48px] tracking-[-2.88px] leading-[52.8px] max-w-[590px] font-inter">
+            <h2 className="text-center text-white text-3xl md:text-[48px] tracking-tight md:tracking-[-2.88px] leading-tight md:leading-[52.8px] max-w-[590px] font-inter px-4 md:px-0">
                {FEATURE_HEADING}
             </h2>
          </div>

@@ -367,7 +367,7 @@ export const SiriIllustration = () => (
       <motion.div
          className="absolute w-[45px] aspect-square left-1/2 -translate-x-1/2 bottom-[26px] rounded-full z-[1] rotate-[101deg] shadow-globe-testimonial bg-globe-gradient"
          animate={{
-            scale: [1, 1.15, 1],
+            scale: [0.7, 1.15, 0.7],
             filter: ["brightness(1)", "brightness(1.4)", "brightness(1)"],
          }}
          transition={{
@@ -376,7 +376,7 @@ export const SiriIllustration = () => (
             ease: "easeInOut",
          }}
       >
-         <Globe />
+         <Globe  degrees={320} duration={1} />
       </motion.div>
    </div>
 );

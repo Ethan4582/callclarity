@@ -23,15 +23,17 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, id }) => 
    };
 
    return (
-      <div className="flex flex-col justify-end w-full h-[400px] bg-[#26262670] p-7 rounded-3xl relative overflow-hidden border border-black/25 after:absolute after:inset-0 after:border after:border-black/25 after:rounded-3xl after:pointer-events-none self-start">
+      <div className="flex flex-col justify-end w-full h-[400px] bg-[#26262670] p-5 md:p-7 rounded-3xl relative overflow-hidden border border-black/25 after:absolute after:inset-0 after:border after:border-black/25 after:rounded-3xl after:pointer-events-none self-start">
          {/* Noise Texture */}
          <div className="absolute inset-0 z-[1] opacity-10 pointer-events-none">
             <img src={NOISE_TEXTURE} alt="" className="w-full h-full object-cover" />
          </div>
 
          {/* Illustration Area */}
-         <div className="relative grow basis-0 w-full mb-2.5">
-            {renderIllustration()}
+         <div className="relative grow basis-0 w-full mb-2.5 flex items-center justify-center">
+            <div className="scale-[0.85] sm:scale-100 transform origin-center flex items-center justify-center w-full h-full relative">
+               {renderIllustration()}
+            </div>
          </div>
 
          {/* Text Content */}
