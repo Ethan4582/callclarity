@@ -211,7 +211,7 @@ export const CustomizationIllustration = () => {
    const [progress, setProgress] = useState(0);
    const [direction, setDirection] = useState<1 | -1>(1);
    const [waiting, setWaiting] = useState(false);
-   const rafRef = useRef<number>();
+   const rafRef = useRef<number>(0);
    const startRef = useRef<number | null>(null);
    const stateRef = useRef({ progress: 0, direction: 1 as 1 | -1, waiting: false });
 
@@ -365,7 +365,7 @@ export const SiriIllustration = () => (
       </div>
 
       <motion.div
-         className="absolute w-[45px] aspect-square left-1/2 -translate-x-1/2 bottom-[26px] rounded-full z-[1] rotate-[101deg] shadow-globe-testimonial bg-globe-gradient"
+         className="absolute w-[45px] aspect-square left-1/2 -translate-x-1/2 bottom-[26px] rounded-full z-[1] rotate-[101deg] shadow-globe-testimonial bg-globe-gradient flex items-center justify-center p-0 m-0"
          animate={{
             scale: [0.7, 1.15, 0.7],
             filter: ["brightness(1)", "brightness(1.4)", "brightness(1)"],
@@ -376,7 +376,9 @@ export const SiriIllustration = () => (
             ease: "easeInOut",
          }}
       >
-         <Globe  degrees={320} duration={1} />
+         <div className="absolute w-[180px] h-[180px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full pointer-events-none flex items-center justify-center">
+            <Globe degrees={320} duration={1} />
+         </div>
       </motion.div>
    </div>
 );

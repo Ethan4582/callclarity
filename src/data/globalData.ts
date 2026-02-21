@@ -330,3 +330,56 @@ export const FEATURE_CTA_DATA = {
    buttonHref: "mailto:hello@callclarity.ai"
 };
 
+// ─── Chat Section Data ───────────────────────────────────────────────────────
+export const CHAT_BADGE_TEXT = "Get Started";
+export const CHAT_HEADING = "Want to Chat?";
+export const CHAT_SUBTITLE = "Boost productivity, accelerate creation, and make smarter decisions with an AI that truly understands you.";
+export const CHAT_TITLE = "ChatFrame";
+export const CHAT_PLACEHOLDER = "Ask me anything...";
+
+export const CHAT_TASKS = [
+   "Task \u00A0",
+   "Language",
+   "Health",
+   "Travel"
+];
+
+export const CHAT_NAV_LINKS = [
+   { label: "Get Started", href: "https://framer.link/RmHInmd", isPrimary: true },
+   { label: "Join Community", href: "https://framer.link/RmHInmd", isPrimary: false },
+];
+
+export const CHAT_ACTION_ICONS = [
+   "M 5.811 5.811 L 5.811 0 L 7.748 0 L 7.748 5.811 L 13.56 5.811 L 13.56 7.748 L 7.748 7.748 L 7.748 13.56 L 5.811 13.56 L 5.811 7.748 L 0 7.748 L 0 5.811 Z",
+   "M 6.837 7.862 L 6.837 4.102 C 6.837 2.592 5.612 1.367 4.102 1.367 C 2.592 1.367 1.367 2.592 1.367 4.102 L 1.367 7.862 C 1.367 10.317 3.357 12.306 5.811 12.306 C 8.266 12.306 10.255 10.317 10.255 7.862 L 10.255 1.367 L 11.623 1.367 L 11.623 7.862 C 11.623 11.072 9.021 13.674 5.811 13.674 C 2.602 13.674 0 11.072 0 7.862 L 0 4.102 C 0 1.837 1.837 0 4.102 0 C 6.368 0 8.204 1.837 8.204 4.102 L 8.204 7.862 C 8.204 9.184 7.133 10.255 5.811 10.255 C 4.49 10.255 3.418 9.184 3.418 7.862 L 3.418 4.102 L 4.786 4.102 L 4.786 7.862 C 4.786 8.429 5.245 8.888 5.811 8.888 C 6.378 8.888 6.837 8.429 6.837 7.862 Z",
+   "M 6.78 13.56 C 3.035 13.56 0 10.524 0 6.78 C 0 3.035 3.035 0 6.78 0 C 10.524 0 13.56 3.035 13.56 6.78 C 13.56 10.524 10.524 13.56 6.78 13.56 Z M 5.227 11.978 C 4.558 10.559 4.171 9.024 4.086 7.458 L 1.398 7.458 C 1.668 9.59 3.169 11.362 5.227 11.978 Z M 5.444 7.458 C 5.547 9.111 6.019 10.665 6.78 12.036 C 7.561 10.629 8.017 9.064 8.116 7.458 Z M 12.162 7.458 L 9.474 7.458 C 9.389 9.024 9.001 10.559 8.332 11.978 C 10.391 11.362 11.892 9.59 12.162 7.458 Z M 1.398 6.102 L 4.086 6.102 C 4.171 4.536 4.558 3.001 5.227 1.582 C 3.169 2.198 1.668 3.97 1.398 6.102 Z M 5.445 6.102 L 8.115 6.102 C 8.017 4.495 7.561 2.931 6.78 1.524 C 5.999 2.931 5.542 4.495 5.444 6.102 Z M 8.332 1.582 C 9.001 3.001 9.389 4.536 9.474 6.102 L 12.162 6.102 C 11.892 3.97 10.391 2.198 8.332 1.582 Z"
+];
+
+export const CHAT_MIC_ICON = "M 14.683 5.652 L 14.488 6.101 C 14.426 6.25 14.28 6.347 14.118 6.347 C 13.956 6.347 13.81 6.25 13.748 6.101 L 13.553 5.652 C 13.21 4.858 12.582 4.222 11.793 3.868 L 11.191 3.599 C 11.042 3.531 10.946 3.382 10.946 3.218 C 10.946 3.053 11.042 2.904 11.191 2.836 L 11.759 2.583 C 12.569 2.22 13.207 1.56 13.544 0.739 L 13.745 0.255 C 13.806 0.101 13.954 0 14.119 0 C 14.284 0 14.432 0.101 14.492 0.255 L 14.693 0.738 C 15.029 1.559 15.667 2.219 16.476 2.583 L 17.046 2.837 C 17.194 2.905 17.289 3.054 17.289 3.218 C 17.289 3.382 17.194 3.531 17.046 3.599 L 16.443 3.867 C 15.654 4.221 15.027 4.858 14.684 5.652 Z M 3.812 4.758 C 3.812 3.309 4.602 1.975 5.873 1.28 C 7.145 0.585 8.694 0.638 9.914 1.42 L 9.058 2.753 C 8.325 2.285 7.396 2.253 6.633 2.671 C 5.871 3.088 5.397 3.888 5.397 4.758 L 5.397 9.514 C 5.397 10.828 6.462 11.893 7.776 11.893 C 9.089 11.893 10.154 10.828 10.154 9.514 L 10.154 5.55 L 11.74 5.55 L 11.74 9.514 C 11.74 11.703 9.965 13.478 7.776 13.478 C 5.586 13.478 3.812 11.703 3.812 9.514 Z M 0 11.07 L 1.555 10.758 C 2.151 13.721 4.754 15.852 7.776 15.852 C 10.798 15.852 13.4 13.721 13.996 10.758 L 15.551 11.07 C 14.828 14.703 11.622 17.442 7.776 17.442 C 3.93 17.442 0.723 14.703 0 11.07 Z";
+
+export const CHAT_SEND_ICON_URL = "https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2Fdf73df575e11a39aa9b8a14df50131b8aee7df65.svg?generation=1771443084381506&alt=media";
+
+// ─── New Benefits Section Data ────────────────────────────────────────────────
+export const NEW_BENEFITS_BADGE = "New Benefits";
+export const NEW_BENEFITS_HEADING = "Our new benefits for those\nwho join the community.";
+
+export const NEW_BENEFITS_CARDS = [
+   {
+      chips: ["New Updates", "Information"],
+      title: "Become part of our\ncommunity and stay\ninformed.",
+      imageType: "chat-list",
+   },
+   {
+      chips: ["Mobile App", "Access"],
+      title: "Exclusive access to\nthe mobile application.",
+      imageType: "app-screen",
+   },
+   {
+      chips: ["Free Trial", "Voice Chat"],
+      title: "Three month free trial\nfor the voice chat.",
+      imageType: "voice-chat",
+   }
+];
+
+export const NEW_BENEFITS_CTA_LABEL = "Join Community";
+export const NEW_BENEFITS_CTA_HREF = "https://framer.link/RmHInmd";
