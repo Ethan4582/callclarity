@@ -376,9 +376,24 @@ html {
   }
 
   .shadow-glow-pro {
-    box-shadow: 0 0 50px -10px rgba(59, 130, 246, 0.4);
+    @apply shadow-[0_0_50px_-10px_rgba(59,130,246,0.4)];
   }
 
+  .bg-globe-gradient {
+    background-image: linear-gradient(rgb(107, 134, 255) 0%, rgb(0, 123, 255) 48.48%, rgb(0, 47, 255) 100%);
+  }
+
+  .bg-profile-gradient-1 {
+    background-image: linear-gradient(29deg, #000 10.378%, #001629 48.6733%, #000552 66.1687%, #330370 85.026%, #4702a1 100%);
+  }
+
+  .bg-profile-gradient-2 {
+    background-image: linear-gradient(98.48deg, #000 10.378%, #001629 48.6733%, #000552 66.1687%, #330370 85.026%, #4702a1 100%);
+  }
+
+  .bg-siri-input {
+    background-image: linear-gradient(29deg, #000 10.378%, #001629 48.67%, #000552 66.17%, #330370 85.03%, #4702a1 100%);
+  }
 }
 
 /* Font Faces */
