@@ -58,7 +58,7 @@ export const CollaborationIllustration = () => {
             await globeControls.start({
                left: globeTarget1.left,
                top: globeTarget1.top,
-               transition: { duration: 1.1, ease: 'easeInOut' },
+               transition: { duration: 1.1, ease: 'easeInOut' as const },
             });
 
             avatar1Controls.start({ opacity: 1, scale: 1.03 });
@@ -70,7 +70,7 @@ export const CollaborationIllustration = () => {
             await globeControls.start({
                left: globeTarget2.left,
                top: globeTarget2.top,
-               transition: { duration: 1.3, ease: 'easeInOut' },
+               transition: { duration: 1.3, ease: 'easeInOut' as const },
             });
 
             avatar2Controls.start({ opacity: 1, scale: 1.03 });
@@ -81,7 +81,7 @@ export const CollaborationIllustration = () => {
             await globeControls.start({
                left: initialLeft,
                top: initialTop,
-               transition: { duration: 1.0, ease: 'easeInOut' },
+               transition: { duration: 1.0, ease: 'easeInOut' as const },
             });
 
             await wait(350);

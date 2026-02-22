@@ -58,7 +58,7 @@ const ChatListMockup = () => {
         transition={{
           duration: 20,
           repeat: Infinity,
-          ease: "linear",
+          ease: "linear" as const,
         }}
       >
         {scrollingItems.map((item, i) => (
@@ -117,7 +117,7 @@ const AppScreenMockup = () => {
         <motion.div
           className="flex gap-3 px-2 w-max"
           animate={{ x: [0, -500] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" as const }}
         >
           {chipsRow1.map((c, i) => (
             <Chip key={`r1-${i}`} text={c} isGradient={i % 4 === 2} />
@@ -126,7 +126,7 @@ const AppScreenMockup = () => {
         <motion.div
           className="flex gap-3 px-2 w-max"
           animate={{ x: [-500, 0] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear", delay: 1 }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" as const, delay: 1 }}
         >
           {chipsRow2.map((c, i) => (
             <Chip key={`r2-${i}`} text={c} isGradient={i % 5 === 1} />
@@ -135,7 +135,7 @@ const AppScreenMockup = () => {
         <motion.div
           className="flex gap-3 px-2 w-max"
           animate={{ x: [0, -500] }}
-          transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 22, repeat: Infinity, ease: "linear" as const }}
         >
           {chipsRow3.map((c, i) => (
             <Chip key={`r3-${i}`} text={c} isGradient={i % 4 === 0} />

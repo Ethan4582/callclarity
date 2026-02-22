@@ -14,17 +14,17 @@ import {
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
 };
 
 const fadeInLeft = {
   hidden: { opacity: 0, x: -40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
 };
 
 const fadeInRight = {
   hidden: { opacity: 0, x: 40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
 };
 
 
@@ -53,17 +53,17 @@ const StarRating = () => (
 const TestimonialCard = ({ data }: { data: typeof TESTIMONIALS[0] }) => (
   <div className="relative text-left w-[300px] md:w-[380px] lg:w-[442px] h-[207px] z-[10] flex-shrink-0">
     <div className="items-start flex flex-col h-full justify-start overflow-clip relative text-left w-full backdrop-blur-[5px] bg-[#262626]/44 gap-[12px] p-6 rounded-3xl after:border after:size-full after:pointer-events-none after:absolute after:text-left after:left-0 after:top-0 after:border-[#262626]/44 after:content-[''] after:rounded-3xl">
-     
+
       <div className="flex flex-col justify-start absolute text-left whitespace-pre top-[10px] right-[10px] shrink-0 pointer-events-none">
         <p className="text-white/5 text-[120px] leading-[120px] font-lily">"</p>
       </div>
 
-     
+
       <div className="absolute inset-0 z-[1] opacity-[0.1] pointer-events-none">
         <img src={NOISE_TEXTURE} className="block size-full overflow-clip aspect-square" alt="" />
       </div>
 
-    
+
       <div className="items-start flex flex-col h-min justify-center overflow-clip relative text-left w-full gap-[16px] shrink-0 z-10">
         <StarRating />
         <p className="text-white text-[14px] md:text-[16px] tracking-[-0.64px] leading-[19.2px] font-inter">
@@ -71,7 +71,7 @@ const TestimonialCard = ({ data }: { data: typeof TESTIMONIALS[0] }) => (
         </p>
       </div>
 
-     
+
       <div className="items-center flex h-min justify-center overflow-clip relative text-left w-full gap-[8px] pt-4 shrink-0 z-10 border-t border-white/10 mt-auto">
         <div className="aspect-square overflow-clip relative w-[38px] shrink-0 rounded-lg">
           <img src={data.profileImg} className="block size-full object-cover rounded-lg" alt={data.name} />
@@ -117,9 +117,9 @@ const Testimonial = () => (
       aria-label="Testimonials"
       className="items-center flex flex-col h-min justify-center relative w-full bg-[#131314]/44 gap-[44px] pt-[100px] pb-11 shrink-0 rounded-[5rem] overflow-hidden"
     >
-    
+
       <div className="items-center flex flex-col h-min justify-center relative w-full max-w-[1000px] z-[1] shrink-0 px-6 gap-[16px]">
-       
+
         <motion.div
           variants={fadeInUp}
           initial="hidden"
@@ -143,7 +143,7 @@ const Testimonial = () => (
           </div>
         </motion.div>
 
-      
+
         <motion.h2
           variants={fadeInUp}
           initial="hidden"
@@ -157,7 +157,7 @@ const Testimonial = () => (
       </div>
 
       <div className="w-full">
-       
+
         <div className="flex flex-col items-center gap-5 md:hidden px-4 w-full">
           {TESTIMONIALS.map((t, i) => (
             <motion.div
@@ -171,20 +171,20 @@ const Testimonial = () => (
             >
               <div className="relative text-left w-full h-auto z-[10]">
                 <div className="items-start flex flex-col h-min justify-start overflow-clip relative text-left w-full backdrop-blur-[5px] bg-[#262626]/44 gap-[12px] p-5 rounded-3xl after:border after:size-full after:pointer-events-none after:absolute after:text-left after:left-0 after:top-0 after:border-[#262626]/44 after:content-[''] after:rounded-3xl">
-               
+
                   <div className="flex flex-col justify-start absolute whitespace-pre top-[10px] right-[10px] shrink-0 pointer-events-none">
                     <p className="text-white/5 text-[120px] leading-[120px] font-lily">"</p>
                   </div>
-               
+
                   <div className="absolute inset-0 z-[1] opacity-[0.1] pointer-events-none">
                     <img src={NOISE_TEXTURE} className="block size-full overflow-clip" alt="" />
                   </div>
-               
+
                   <div className="items-start flex flex-col h-min justify-center relative w-full gap-[12px] shrink-0 z-10">
                     <StarRating />
                     <p className="text-white text-[15px] tracking-[-0.5px] leading-[1.35] font-inter">{t.text}</p>
                   </div>
-                 
+
                   <div className="items-center flex h-min justify-start relative w-full gap-[8px] pt-4 shrink-0 z-10 border-t border-white/10">
                     <div className="aspect-square overflow-clip relative w-[38px] shrink-0 rounded-lg">
                       <img src={t.profileImg} className="block size-full object-cover rounded-lg" alt={t.name} />
@@ -205,7 +205,7 @@ const Testimonial = () => (
           ))}
         </div>
 
-      
+
         <motion.div
           variants={fadeInUp}
           initial="hidden"

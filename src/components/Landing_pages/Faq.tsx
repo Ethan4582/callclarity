@@ -69,7 +69,7 @@ const FaqItem = ({ question, answer, index }: { question: string; answer: string
         ].join(' ')}
         aria-expanded={open}
       >
-      
+
         <div className="items-center flex h-min justify-between w-full gap-[10px] shrink-0">
           <p className="text-white text-[20px] tracking-[-0.8px] leading-[24px] font-inter text-left grow">
             {question}
@@ -77,7 +77,7 @@ const FaqItem = ({ question, answer, index }: { question: string; answer: string
           <PlusIcon open={open} />
         </div>
 
-      
+
         <AnimatePresence initial={false}>
           {open && (
             <motion.div
@@ -85,7 +85,7 @@ const FaqItem = ({ question, answer, index }: { question: string; answer: string
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              transition={{ duration: 0.3, ease: 'easeInOut' as const }}
               className="overflow-hidden w-full"
             >
               <p className="text-white/50 text-[16px] tracking-[-0.64px] leading-[19.2px] font-inter pt-3 pr-3 text-left">
@@ -149,7 +149,7 @@ const LeftColumn = () => (
       </div>
     </header>
 
- 
+
     <div className="flex flex-col gap-[16px]">
       <p className="text-[rgb(146,146,146)] text-[16px] tracking-[-0.64px] leading-[19.2px] font-inter">
         Have more questions?
