@@ -122,7 +122,7 @@ const Chat = () => {
                           <motion.div
                             className="absolute w-[370px] h-[370px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full pointer-events-none flex items-center justify-center z-[1]"
                             animate={{
-                              scale: [0.8, 1.6, 0.8],
+                              scale: [0.4, 0.8, 0.4],
                             }}
                             transition={{
                               duration: 3,
@@ -130,7 +130,7 @@ const Chat = () => {
                               ease: "easeInOut" as const,
                             }}
                           >
-                            <Globe degrees={320} duration={2} scale={3} />
+                            <Globe degrees={320} duration={2} className="scale-[3]" />
                           </motion.div>
                         </div>
                         <div className="flex flex-col justify-start relative whitespace-pre-wrap w-full shrink-0 opacity-95">
